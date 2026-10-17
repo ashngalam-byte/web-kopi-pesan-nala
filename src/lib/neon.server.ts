@@ -15,7 +15,7 @@ function gatewayHeaders(): Record<string, string> {
 }
 
 // Writes: no automatic retry.
-export async function neonExecute(query: string, params: unknown[] = []): Promise<NeonResult> {
+export async function neonExecute(query: string, params: unknown[] = [], readOnly = false): Promise<NeonResult> {
   const headers = gatewayHeaders();
   let status = 0;
   let json: any = {};
@@ -35,15 +35,32 @@ export async function neonExecute(query: string, params: unknown[] = []): Promis
   }
   const code = json?.code || json?.type;
   let kind = "rejected";
-  if (code === "28P01" || code === "28000" || /^password authentication failed/.test(json?.message ?? "")) kind = "stale_connection";
+  if (code === "28P01" || code === "28000" || /^(password authentication failed|Control plane request failed: endpoint cannot be found)/.test(json?.message ?? "")) kind = "stale_connection";
+  else if (/^(The endpoint has been disabled|Control plane request failed: endpoint is)/.test(json?.message ?? "")) kind = "endpoint_blocked";
   else if (code === "23505") kind = "unique";
   else if (/^2[23]/.test(code ?? "")) kind = "input";
-  else if (status === 0 || status === 502) kind = "maybe_committed";
+  else if (status === 0 || status === 502) kind = readOnly ? "unavailable" : "maybe_committed";
   else if (status === 429) kind = "rate_limited";
   else if (status >= 500) kind = "unavailable";
   return Promise.reject(
     Object.assign(new Error(`Neon ${status} ${code ?? ""}: ${json?.message ?? text.slice(0, 300)}`), { status, code, kind }) as NeonError,
   );
+}
+
+export function neonQuery(query: string, params: unknown[] = []) {
+  return neonExecute(query, params, true);
+}
+
+export async function verifyPassword(password: string, stored: string): Promise<boolean> {
+  const [algorithm, rounds, saltHex, expectedHex] = stored.split("$");
+  if (algorithm !== "pbkdf2" || rounds !== "100000" || !saltHex || !expectedHex || !/^[a-f0-9]{32}$/.test(saltHex) || !/^[a-f0-9]{64}$/.test(expectedHex)) return false;
+  const salt = Uint8Array.from(saltHex.match(/.{2}/g) ?? [], (x) => parseInt(x, 16));
+  const expected = Uint8Array.from(expectedHex.match(/.{2}/g) ?? [], (x) => parseInt(x, 16));
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveBits"]);
+  const actual = new Uint8Array(await crypto.subtle.deriveBits({ name: "PBKDF2", salt, iterations: 100_000, hash: "SHA-256" }, key, 256));
+  let difference = 0;
+  for (let i = 0; i < actual.length; i++) difference |= (actual[i] ?? 0) ^ (expected[i] ?? 0);
+  return difference === 0;
 }
 
 export async function hashPassword(password: string): Promise<string> {
