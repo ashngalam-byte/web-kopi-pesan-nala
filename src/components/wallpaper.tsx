@@ -16,10 +16,7 @@ export function Wallpaper({ children }: { children: ReactNode }) {
         height={1088}
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/25 to-background/45"
-      />
+      <div aria-hidden="true" className="absolute inset-0 bg-background/20" />
       <div
         aria-hidden="true"
         className="absolute inset-0 shadow-[inset_0_0_200px_70px_oklch(0.22_0.03_60/0.30)]"
