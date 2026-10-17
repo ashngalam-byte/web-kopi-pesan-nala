@@ -18,14 +18,14 @@ export function Wallpaper({ children }: { children: ReactNode }) {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-tr from-background via-background/85 to-background/40"
+        className="absolute inset-0 bg-gradient-to-tr from-background/80 via-background/45 to-background/15"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 shadow-[inset_0_0_180px_60px_oklch(0.22_0.03_60/0.25)]"
+        className="absolute inset-0 shadow-[inset_0_0_200px_70px_oklch(0.22_0.03_60/0.30)]"
       />
       <div className="relative mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-md flex-col justify-center">
-        <div className="rounded-2xl border border-border/70 bg-card/85 p-8 shadow-2xl backdrop-blur-md">
+        <div className="rounded-2xl border border-border/70 bg-card/80 p-8 shadow-2xl backdrop-blur-lg">
           {children}
         </div>
       </div>
