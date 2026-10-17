@@ -3,7 +3,8 @@ import wallpaper from "@/assets/arabica-wallpaper.jpg";
 
 /**
  * Full-screen coffee wallpaper used behind the register and login screens.
- * The cream gradient keeps the form panel readable while the beans stay visible.
+ * A light tint plus a soft edge shadow keeps the form panel readable
+ * while the beans stay visible across the whole page.
  */
 export function Wallpaper({ children }: { children: ReactNode }) {
   return (
