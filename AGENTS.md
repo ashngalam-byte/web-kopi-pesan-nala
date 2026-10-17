@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Neon (via Lovable connector gateway) stores app users in public.users; access only from server code through src/lib/neon.server.ts — keeps credentials server-side.
