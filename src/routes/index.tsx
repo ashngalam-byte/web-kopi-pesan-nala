@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { Wallpaper } from "@/components/wallpaper";
 import { useState, type FormEvent } from "react";
 import { registerUser } from "@/lib/register.functions";
 
@@ -39,47 +40,45 @@ function Register() {
   }
 
   return (
-    <main className="grid min-h-screen place-items-center bg-background px-4">
-      <div className="w-full max-w-md">
-        <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">Selamat datang</p>
-        <h1 className="mt-2 font-display text-5xl text-foreground">Buat akun.</h1>
-        {done ? (
-          <div className="mt-10 rounded-lg border border-border bg-card p-6 text-card-foreground">
-            <p className="text-lg">Pendaftaran berhasil 🎉</p>
-            <p className="mt-1 text-sm text-muted-foreground">Akun {form.email} sudah tersimpan.</p>
-            <Button asChild variant="link" className="mt-4 p-0"><Link to="/login">Masuk ke akun</Link></Button>
-          </div>
-        ) : (
-          <form onSubmit={onSubmit} className="mt-10 space-y-5">
-            {([
-              ["name", "Nama lengkap", "text"],
-              ["email", "Email", "email"],
-              ["password", "Password (min. 8 karakter)", "password"],
-            ] as const).map(([key, label, type]) => (
-              <label key={key} className="block">
-                <span className="text-sm text-muted-foreground">{label}</span>
-                <input
-                  type={type}
-                  required
-                  minLength={key === "password" ? 8 : key === "name" ? 2 : undefined}
-                  value={form[key]}
-                  onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-                  className="mt-1 w-full border-b-2 border-input bg-transparent py-2 text-lg text-foreground outline-none transition-colors focus:border-primary"
-                />
-              </label>
-            ))}
-            {error && <p className="text-sm text-destructive">{error}</p>}
-            <Button
-              type="submit"
-              disabled={loading}
-              className="w-full rounded-md bg-primary py-3 font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
-            >
-              {loading ? "Mendaftarkan..." : "Daftar"}
-            </Button>
-            <p className="text-center text-sm text-muted-foreground">Sudah punya akun? <Button asChild variant="link" className="h-auto p-0"><Link to="/login">Masuk</Link></Button></p>
-          </form>
-        )}
-      </div>
-    </main>
+    <Wallpaper>
+      <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">Selamat datang</p>
+      <h1 className="mt-2 font-display text-5xl text-foreground">Buat akun.</h1>
+      {done ? (
+        <div className="mt-8">
+          <p className="text-lg">Pendaftaran berhasil 🎉</p>
+          <p className="mt-1 text-sm text-muted-foreground">Akun {form.email} sudah tersimpan.</p>
+          <Button asChild variant="link" className="mt-4 p-0"><Link to="/login">Masuk ke akun</Link></Button>
+        </div>
+      ) : (
+        <form onSubmit={onSubmit} className="mt-8 space-y-5">
+          {([
+            ["name", "Nama lengkap", "text"],
+            ["email", "Email", "email"],
+            ["password", "Password (min. 8 karakter)", "password"],
+          ] as const).map(([key, label, type]) => (
+            <label key={key} className="block">
+              <span className="text-sm text-muted-foreground">{label}</span>
+              <input
+                type={type}
+                required
+                minLength={key === "password" ? 8 : key === "name" ? 2 : undefined}
+                value={form[key]}
+                onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+                className="mt-1 w-full border-b-2 border-input bg-transparent py-2 text-lg text-foreground outline-none transition-colors focus:border-primary"
+              />
+            </label>
+          ))}
+          {error && <p className="text-sm text-destructive">{error}</p>}
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-md bg-primary py-3 font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
+          >
+            {loading ? "Mendaftarkan..." : "Daftar"}
+          </Button>
+          <p className="text-center text-sm text-muted-foreground">Sudah punya akun? <Button asChild variant="link" className="h-auto p-0"><Link to="/login">Masuk</Link></Button></p>
+        </form>
+      )}
+    </Wallpaper>
   );
 }
