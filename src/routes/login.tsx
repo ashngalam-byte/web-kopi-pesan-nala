@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState, type FormEvent } from "react";
 import { Eye, EyeOff, LogOut } from "lucide-react";
@@ -21,6 +21,8 @@ export const Route = createFileRoute("/login")({
 function Login() {
   const user = Route.useLoaderData();
   const navigate = useNavigate();
+  const router = useRouter();
+  const { queryClient } = Route.useRouteContext();
   const login = useServerFn(loginUser);
   const logout = useServerFn(logoutUser);
   const [email, setEmail] = useState("");
@@ -34,7 +36,7 @@ function Login() {
     try {
       const result = await login({ data: { email, password } });
       if (!result.ok) setError(result.error);
-      else { setPassword(""); await navigate({ to: "/login", replace: true }); }
+      else { setPassword(""); await router.invalidate(); }
     } catch { setError("Login belum dapat diproses. Coba lagi sebentar."); }
     finally { setLoading(false); }
   }
@@ -42,9 +44,10 @@ function Login() {
   async function signOut() {
     setLoading(true); setError(null);
     try {
-      await Route.router.options.context.queryClient.cancelQueries();
-      Route.router.options.context.queryClient.clear();
+      await queryClient.cancelQueries();
+      queryClient.clear();
       await logout();
+      await router.invalidate();
       await navigate({ to: "/login", replace: true });
     } catch { setError("Gagal keluar. Coba lagi."); }
     finally { setLoading(false); }
