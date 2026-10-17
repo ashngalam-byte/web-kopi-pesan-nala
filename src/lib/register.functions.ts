@@ -20,7 +20,7 @@ export const registerUser = createServerFn({ method: "POST" })
         "insert into public.users (name, email, password_hash) values ($1, $2, $3) returning id",
         [data.name, data.email, hash],
       );
-      return { ok: true as const, id: String(r.rows[0].id) };
+      return { ok: true as const, id: String(r.rows[0]?.["id"] ?? "") };
     } catch (err: any) {
       console.error(err);
       if (err?.kind === "unique") return { ok: false as const, error: "Email sudah terdaftar." };

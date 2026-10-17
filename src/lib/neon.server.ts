@@ -4,8 +4,8 @@ type NeonResult = { rows: Record<string, unknown>[]; rowCount: number | null };
 type NeonError = Error & { status: number; code?: string; kind: string };
 
 function gatewayHeaders(): Record<string, string> {
-  const LOVABLE_API_KEY = process.env.LOVABLE_API_KEY;
-  const NEON_API_KEY = process.env.NEON_API_KEY;
+  const LOVABLE_API_KEY = process.env["LOVABLE_API_KEY"];
+  const NEON_API_KEY = process.env["NEON_API_KEY"];
   if (!LOVABLE_API_KEY || !NEON_API_KEY) throw new Error("Missing LOVABLE_API_KEY or NEON_API_KEY");
   return {
     Authorization: `Bearer ${LOVABLE_API_KEY}`,
