@@ -1,50 +1,43 @@
-const GATEWAY_URL = "https://connector-gateway.lovable.dev/neon";
+import { neon as neonHttp } from "@neondatabase/serverless";
+
+function getClient() {
+  const url = process.env["DATABASE_URL"];
+  if (!url) throw new Error("Missing DATABASE_URL");
+  return neonHttp(url);
+}
 
 type NeonResult = { rows: Record<string, unknown>[]; rowCount: number | null };
 type NeonError = Error & { status: number; code?: string; kind: string };
 
-function gatewayHeaders(): Record<string, string> {
-  const LOVABLE_API_KEY = process.env["LOVABLE_API_KEY"];
-  const NEON_API_KEY = process.env["NEON_API_KEY"];
-  if (!LOVABLE_API_KEY || !NEON_API_KEY) throw new Error("Missing LOVABLE_API_KEY or NEON_API_KEY");
-  return {
-    Authorization: `Bearer ${LOVABLE_API_KEY}`,
-    "X-Connection-Api-Key": NEON_API_KEY,
-    "Content-Type": "application/json",
-  };
+function classifyError(err: unknown): NeonError {
+  const e = err as any;
+  const code: string = e?.code ?? "";
+  const message: string = e?.message ?? "";
+  let kind = "rejected";
+
+  if (code === "28P01" || code === "28000" || /password authentication failed/.test(message)) kind = "stale_connection";
+  else if (/endpoint.*disabled/i.test(message)) kind = "endpoint_blocked";
+  else if (code === "23505") kind = "unique";
+  else if (/^2[23]/.test(code)) kind = "input";
+  else if (/ECONNREFUSED|ETIMEDOUT|EAI_AGAIN|network|fetch failed/i.test(message)) kind = "unavailable";
+  else if (code === "429") kind = "rate_limited";
+
+  return Object.assign(
+    new Error(`Neon error [${code}]: ${message}`),
+    { status: e?.status ?? 0, code, kind },
+  ) as NeonError;
 }
 
 // Writes: no automatic retry.
-export async function neonExecute(query: string, params: unknown[] = [], readOnly = false): Promise<NeonResult> {
-  const headers = gatewayHeaders();
-  let status = 0;
-  let json: any = {};
-  let text = "";
+export async function neonExecute(query: string, params: unknown[] = [], _readOnly = false): Promise<NeonResult> {
   try {
-    const res = await fetch(`${GATEWAY_URL}/sql`, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({ query, params }),
-    });
-    status = res.status;
-    text = await res.text();
-    try { json = JSON.parse(text); } catch { json = {}; }
-    if (res.ok) return json as NeonResult;
-  } catch (err: any) {
-    json = { message: String(err?.name ?? err) };
+    const sql = getClient();
+    // @neondatabase/serverless tagged-template returns rows directly
+    const rows = (await sql(query, params)) as Record<string, unknown>[];
+    return { rows, rowCount: rows.length };
+  } catch (err: unknown) {
+    return Promise.reject(classifyError(err));
   }
-  const code = json?.code || json?.type;
-  let kind = "rejected";
-  if (code === "28P01" || code === "28000" || /^(password authentication failed|Control plane request failed: endpoint cannot be found)/.test(json?.message ?? "")) kind = "stale_connection";
-  else if (/^(The endpoint has been disabled|Control plane request failed: endpoint is)/.test(json?.message ?? "")) kind = "endpoint_blocked";
-  else if (code === "23505") kind = "unique";
-  else if (/^2[23]/.test(code ?? "")) kind = "input";
-  else if (status === 0 || status === 502) kind = readOnly ? "unavailable" : "maybe_committed";
-  else if (status === 429) kind = "rate_limited";
-  else if (status >= 500) kind = "unavailable";
-  return Promise.reject(
-    Object.assign(new Error(`Neon ${status} ${code ?? ""}: ${json?.message ?? text.slice(0, 300)}`), { status, code, kind }) as NeonError,
-  );
 }
 
 export function neonQuery(query: string, params: unknown[] = []) {
@@ -53,11 +46,21 @@ export function neonQuery(query: string, params: unknown[] = []) {
 
 export async function verifyPassword(password: string, stored: string): Promise<boolean> {
   const [algorithm, rounds, saltHex, expectedHex] = stored.split("$");
-  if (algorithm !== "pbkdf2" || rounds !== "100000" || !saltHex || !expectedHex || !/^[a-f0-9]{32}$/.test(saltHex) || !/^[a-f0-9]{64}$/.test(expectedHex)) return false;
+  if (
+    algorithm !== "pbkdf2" ||
+    rounds !== "100000" ||
+    !saltHex ||
+    !expectedHex ||
+    !/^[a-f0-9]{32}$/.test(saltHex) ||
+    !/^[a-f0-9]{64}$/.test(expectedHex)
+  )
+    return false;
   const salt = Uint8Array.from(saltHex.match(/.{2}/g) ?? [], (x) => parseInt(x, 16));
   const expected = Uint8Array.from(expectedHex.match(/.{2}/g) ?? [], (x) => parseInt(x, 16));
   const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveBits"]);
-  const actual = new Uint8Array(await crypto.subtle.deriveBits({ name: "PBKDF2", salt, iterations: 100_000, hash: "SHA-256" }, key, 256));
+  const actual = new Uint8Array(
+    await crypto.subtle.deriveBits({ name: "PBKDF2", salt, iterations: 100_000, hash: "SHA-256" }, key, 256),
+  );
   let difference = 0;
   for (let i = 0; i < actual.length; i++) difference |= (actual[i] ?? 0) ^ (expected[i] ?? 0);
   return difference === 0;

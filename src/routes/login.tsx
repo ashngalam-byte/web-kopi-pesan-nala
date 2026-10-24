@@ -44,6 +44,7 @@ function Login() {
       else {
         setPassword("");
         await router.invalidate();
+        await navigate({ to: "/menu", replace: true });
       }
     } catch {
       setError("Login belum dapat diproses. Coba lagi sebentar.");
@@ -70,9 +71,9 @@ function Login() {
 
   return (
     <Wallpaper>
-      <p className="font-display text-sm uppercase text-primary">Selamat datang kembali</p>
-      <h1 className="mt-2 break-words font-display text-5xl text-foreground">
-        {user ? `Halo, ${user.name}.` : "Masuk akun."}
+      <p className="font-heading text-xs font-semibold uppercase tracking-[0.4em] text-primary">Selamat datang kembali</p>
+      <h1 className="mt-2 break-words font-display text-5xl font-bold text-foreground" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.06em" }}>
+        {user ? `HALO, ${user.name.toUpperCase()}.` : "MASUK AKUN."}
       </h1>
 
       {user ? (

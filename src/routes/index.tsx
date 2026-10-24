@@ -41,8 +41,8 @@ function Register() {
 
   return (
     <Wallpaper>
-      <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">Selamat datang</p>
-      <h1 className="mt-2 font-display text-5xl text-foreground">Buat akun.</h1>
+      <p className="font-heading text-xs font-semibold uppercase tracking-[0.4em] text-primary">Selamat datang</p>
+      <h1 className="mt-2 font-display text-5xl font-bold text-foreground" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.06em" }}>BUAT AKUN.</h1>
       {done ? (
         <div className="mt-8">
           <p className="text-lg">Pendaftaran berhasil 🎉</p>
