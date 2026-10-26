@@ -236,25 +236,13 @@ function SlideCover() {
           </div>
         </div>
 
-        {/* Right — foto produk packaging (Artboard 4 = Good Coffee Better Days promo) */}
-        <div style={{ position: "relative", overflow: "hidden", minHeight: 480 }}>
+        {/* Right — foto Artboard 4, tampil penuh tanpa crop */}
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <img
             src="/Artboard 4.png"
             alt="Nala Coffee product branding"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+            style={{ width: "100%", display: "block", objectFit: "contain" }}
           />
-          {/* Bottom strip dengan foto tambahan */}
-          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: `${GREEN}e0`, padding: "16px 24px", display: "flex", alignItems: "center", gap: 16 }}>
-            <img
-              src="/bungkusan beans real.jpeg"
-              alt="Nala Coffee packaging"
-              style={{ width: 56, height: 56, borderRadius: 8, objectFit: "cover", border: `2px solid ${GOLD}` }}
-            />
-            <div>
-              <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", color: WHITE, letterSpacing: "0.1em" }}>PREMIUM COFFEE BEANS</p>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.65rem", color: GOLD, marginTop: 2 }}>100% Arabica · Aceh Gayo · 250g</p>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -327,16 +315,15 @@ function SlideEspresso() {
         </p>
       </div>
 
-      {/* Right — foto portrait barista + latte */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 14, padding: "48px 48px 0 0" }} className="max-lg:px-8">
-        <div style={{ borderRadius: 12, overflow: "hidden", flex: 1, minHeight: 400 }}>
+      {/* Right — foto barista portrait, tampil penuh */}
+      <div style={{ padding: "48px 48px 0 0", display: "flex", flexDirection: "column", gap: 14 }} className="max-lg:px-8">
+        <div style={{ borderRadius: 12, overflow: "hidden" }}>
           <img
             src="/telegram-cloud-photo-size-5-6183883515124977803-y.jpg"
             alt="Barista Nala Coffee"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+            style={{ width: "100%", display: "block" }}
           />
         </div>
-        {/* Brand tagline card di bawah foto */}
         <div style={{ background: GREEN, borderRadius: 12, padding: "16px 20px" }}>
           <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", color: WHITE, letterSpacing: "0.1em" }}>NALA COFFEE ROASTORY</p>
           <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: "0.95rem", color: GOLD, marginTop: 3 }}>Good Coffee, Better Days.</p>
@@ -442,12 +429,12 @@ function SlideManualBrew() {
 
         {/* Kanan — foto portrait yang relevan */}
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-          {/* Foto packaging beans asli */}
-          <div style={{ borderRadius: 12, overflow: "hidden", border: `2px solid ${GREEN}20`, boxShadow: "0 4px 16px rgba(8,54,40,0.1)" }}>
+          {/* Foto packaging beans asli — tampil penuh */}
+          <div style={{ borderRadius: 12, overflow: "hidden", border: `2px solid ${GREEN}20` }}>
             <img
               src="/bungkusan beans real.jpeg"
               alt="Nala Coffee Beans packaging"
-              style={{ width: "100%", aspectRatio: "4/5", objectFit: "cover", display: "block" }}
+              style={{ width: "100%", display: "block" }}
             />
           </div>
           {/* Infografis Arabica — relevan karena berisi info beans */}
@@ -513,13 +500,13 @@ function SlideNonCoffee() {
         </p>
       </div>
 
-      {/* Right — Artboard 4 portrait (promo produk krem, relevan sebagai brand context) */}
+      {/* Right — Artboard 4 tampil penuh */}
       <div style={{ padding: "48px 48px 0 0", display: "flex", flexDirection: "column", gap: 14 }} className="max-lg:px-8">
-        <div style={{ borderRadius: 12, overflow: "hidden", flex: 1, minHeight: 400 }}>
+        <div style={{ borderRadius: 12, overflow: "hidden" }}>
           <img
             src="/Artboard 4.png"
             alt="Nala Coffee Good Coffee Better Days"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+            style={{ width: "100%", display: "block" }}
           />
         </div>
       </div>
@@ -606,12 +593,12 @@ function SlidePastry() {
           </div>
         </div>
 
-        {/* Kanan — Artboard 6 portrait: foto kafe dengan makanan & kopi di meja */}
-        <div style={{ borderRadius: 12, overflow: "hidden", border: `2px solid ${GREEN}15`, boxShadow: "0 4px 20px rgba(8,54,40,0.1)" }}>
+        {/* Kanan — Artboard 6 portrait: foto kafe dengan makanan & kopi di meja, tampil penuh */}
+        <div style={{ borderRadius: 12, overflow: "hidden", border: `2px solid ${GREEN}15` }}>
           <img
             src="/Artboard 6.png"
             alt="Nala Coffee Café — Your Table Is Waiting"
-            style={{ width: "100%", display: "block", objectFit: "cover" }}
+            style={{ width: "100%", display: "block" }}
           />
           <div style={{ background: GREEN, padding: "14px 18px" }}>
             <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", color: WHITE, letterSpacing: "0.1em" }}>YOUR TABLE IS WAITING</p>
