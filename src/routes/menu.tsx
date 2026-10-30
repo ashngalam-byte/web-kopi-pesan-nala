@@ -282,37 +282,38 @@ function SlideEspresso() {
           <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: "1.1rem", color: GOLD, marginTop: 8 }}>Handcrafted with love</p>
         </div>
 
-        {/* Menu grid dengan foto */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+        {/* Menu grid dengan foto — card layout */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
           {espressoItems.map((item, i) => (
             <div key={item.name} style={{
-              display: "flex", alignItems: "center",
-              padding: "12px 0",
-              borderBottom: `1px solid ${GREEN}15`,
-              gap: 14,
+              background: WHITE,
+              border: `1px solid ${GREEN}15`,
+              borderRadius: 12,
+              overflow: "hidden",
+              boxShadow: "0 2px 8px rgba(8,54,40,0.06)",
             }}>
-              {/* Foto item */}
-              <div style={{ width: 64, height: 64, borderRadius: 10, overflow: "hidden", flexShrink: 0 }}>
+              {/* Foto — aspectRatio agar tidak terpotong */}
+              <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
                 <img src={item.img} alt={item.name}
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
               {/* Info */}
-              <div style={{ flex: 1 }}>
-                <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 2 }}>
+              <div style={{ padding: "10px 12px 12px" }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 2 }}>
                   <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: "0.5rem", color: GOLD, letterSpacing: "0.1em" }}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.15rem", letterSpacing: "0.08em", color: GREEN, lineHeight: 1, margin: 0 }}>
+                  <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.05rem", letterSpacing: "0.08em", color: GREEN, lineHeight: 1, margin: 0 }}>
                     {item.name.toUpperCase()}
                   </p>
                 </div>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.62rem", color: `${GREEN}55`, margin: 0 }}>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.6rem", color: `${GREEN}55`, margin: "3px 0 6px" }}>
                   {item.note}
                 </p>
+                <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", color: GREEN, margin: 0 }}>
+                  Rp {item.price}
+                </p>
               </div>
-              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.1rem", color: GREEN, flexShrink: 0 }}>
-                Rp {item.price}
-              </span>
             </div>
           ))}
         </div>
@@ -389,8 +390,8 @@ function SlideManualBrew() {
                 borderRadius: 12,
                 overflow: "hidden",
               }}>
-                {/* Foto */}
-                <div style={{ height: 120, overflow: "hidden" }}>
+                {/* Foto — aspectRatio agar tidak terpotong */}
+                <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
                   <img src={bean.img} alt={bean.origin}
                     style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                 </div>
@@ -491,8 +492,8 @@ function SlideNonCoffee() {
               border: `1px solid ${i % 3 === 0 ? GOLD + "30" : GREEN + "12"}`,
               borderRadius: 10, overflow: "hidden",
             }}>
-              {/* Foto */}
-              <div style={{ height: 100, overflow: "hidden" }}>
+              {/* Foto — aspectRatio agar tidak terpotong */}
+              <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
                 <img src={item.img} alt={item.name}
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
@@ -571,8 +572,8 @@ function SlidePastry() {
                 border: `1px solid ${i % 2 === 0 ? GOLD + "30" : GREEN + "12"}`,
                 borderRadius: 10, overflow: "hidden",
               }}>
-                {/* Foto */}
-                <div style={{ height: 110, overflow: "hidden" }}>
+                {/* Foto — aspectRatio agar tidak terpotong */}
+                <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
                   <img src={item.img} alt={item.name}
                     style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                 </div>
