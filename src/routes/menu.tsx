@@ -309,10 +309,8 @@ function SlideEspresso() {
               boxShadow: "0 2px 8px rgba(8,54,40,0.06)",
             }}>
               {/* Foto — aspectRatio agar tidak terpotong */}
-              <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
-                <img src={item.img} alt={item.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-              </div>
+              <img src={item.img} alt={item.name}
+                style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px 12px 0 0" }} />
               {/* Info */}
               <div style={{ padding: "10px 12px 12px" }}>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 2 }}>
@@ -407,10 +405,8 @@ function SlideManualBrew() {
                 overflow: "hidden",
               }}>
                 {/* Foto beans — contain agar tidak terpotong */}
-                <div style={{ aspectRatio: "4/3", overflow: "hidden", background: "#1a0f08" }}>
-                  <img src={bean.img} alt={bean.origin}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
-                </div>
+                <img src={bean.img} alt={bean.origin}
+                  style={{ width: "100%", height: "auto", display: "block" }} />
                 <div style={{ padding: "12px 14px 10px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
                     <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", color: i % 2 === 0 ? WHITE : GREEN, letterSpacing: "0.08em", lineHeight: 1, margin: 0 }}>
@@ -509,10 +505,8 @@ function SlideNonCoffee() {
               borderRadius: 10, overflow: "hidden",
             }}>
               {/* Foto — aspectRatio agar tidak terpotong */}
-              <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
-                <img src={item.img} alt={item.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-              </div>
+              <img src={item.img} alt={item.name}
+                style={{ width: "100%", height: "auto", display: "block", borderRadius: "10px 10px 0 0" }} />
               <div style={{ padding: "10px 14px 12px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
                   <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", letterSpacing: "0.06em", color: i % 3 === 0 ? WHITE : GREEN, lineHeight: 1, margin: 0 }}>
@@ -589,10 +583,8 @@ function SlidePastry() {
                 borderRadius: 10, overflow: "hidden",
               }}>
                 {/* Foto — aspectRatio agar tidak terpotong */}
-                <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
-                  <img src={item.img} alt={item.name}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                </div>
+                <img src={item.img} alt={item.name}
+                  style={{ width: "100%", height: "auto", display: "block" }} />
                 <div style={{ padding: "12px 14px" }}>
                   <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", letterSpacing: "0.06em", color: i % 2 === 0 ? WHITE : GREEN, lineHeight: 1, marginBottom: 4 }}>
                     {item.name.toUpperCase()}
