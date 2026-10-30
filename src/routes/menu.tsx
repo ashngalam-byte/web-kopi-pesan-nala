@@ -31,10 +31,10 @@ const espressoItems = [
 ];
 
 const manualBrewItems = [
-  { origin: "Gayo, Aceh", process: "Washed", notes: ["Chocolatey", "Caramel", "Brown Sugar"], price: "55.000", img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" },
-  { origin: "Toraja, Sulawesi", process: "Natural", notes: ["Fruity", "Dark Cherry", "Earthy"], price: "60.000", img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" },
-  { origin: "Flores, NTT", process: "Honey", notes: ["Floral", "Apricot", "Jasmine"], price: "58.000", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=80" },
-  { origin: "Kintamani, Bali", process: "Washed", notes: ["Citrus", "Vanilla", "Mild"], price: "55.000", img: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80" },
+  { origin: "Gayo, Aceh", process: "Washed", notes: ["Chocolatey", "Caramel", "Brown Sugar"], price: "55.000", img: "https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=600&q=85" },
+  { origin: "Toraja, Sulawesi", process: "Natural", notes: ["Fruity", "Dark Cherry", "Earthy"], price: "60.000", img: "https://images.unsplash.com/photo-1587734195342-43db1b1f3d90?w=600&q=85" },
+  { origin: "Flores, NTT", process: "Honey", notes: ["Floral", "Apricot", "Jasmine"], price: "58.000", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&q=85" },
+  { origin: "Kintamani, Bali", process: "Washed", notes: ["Citrus", "Vanilla", "Mild"], price: "55.000", img: "https://images.unsplash.com/photo-1559525839-8a212e8f16a1?w=600&q=85" },
 ];
 
 const nonCoffeeItems = [
@@ -390,10 +390,10 @@ function SlideManualBrew() {
                 borderRadius: 12,
                 overflow: "hidden",
               }}>
-                {/* Foto — aspectRatio agar tidak terpotong */}
-                <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
+                {/* Foto beans — contain agar tidak terpotong */}
+                <div style={{ aspectRatio: "4/3", overflow: "hidden", background: "#1a0f08" }}>
                   <img src={bean.img} alt={bean.origin}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
                 </div>
                 <div style={{ padding: "12px 14px 10px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
