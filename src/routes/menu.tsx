@@ -22,35 +22,35 @@ export const Route = createFileRoute("/menu")({
 /* ─────────────────────────────────────── data ─────────────── */
 
 const espressoItems = [
-  { name: "Espresso", note: "Bold & intense", price: "28.000" },
-  { name: "Americano", note: "Espresso + hot water", price: "32.000" },
-  { name: "Cafe Latte", note: "Espresso + steamed milk", price: "38.000" },
-  { name: "Cappuccino", note: "Equal parts espresso, milk & foam", price: "38.000" },
-  { name: "Flat White", note: "Double ristretto + velvety milk", price: "42.000" },
-  { name: "Macchiato", note: "Espresso with a touch of foam", price: "35.000" },
+  { name: "Espresso", note: "Bold & intense", price: "28.000", img: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=80" },
+  { name: "Americano", note: "Espresso + hot water", price: "32.000", img: "https://images.unsplash.com/photo-1551030173-122aabc4489c?w=400&q=80" },
+  { name: "Cafe Latte", note: "Espresso + steamed milk", price: "38.000", img: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=400&q=80" },
+  { name: "Cappuccino", note: "Equal parts espresso, milk & foam", price: "38.000", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&q=80" },
+  { name: "Flat White", note: "Double ristretto + velvety milk", price: "42.000", img: "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=400&q=80" },
+  { name: "Macchiato", note: "Espresso with a touch of foam", price: "35.000", img: "https://images.unsplash.com/photo-1485808191679-5f86510bd9d4?w=400&q=80" },
 ];
 
 const manualBrewItems = [
-  { origin: "Gayo, Aceh", process: "Washed", notes: ["Chocolatey", "Caramel", "Brown Sugar"], price: "55.000" },
-  { origin: "Toraja, Sulawesi", process: "Natural", notes: ["Fruity", "Dark Cherry", "Earthy"], price: "60.000" },
-  { origin: "Flores, NTT", process: "Honey", notes: ["Floral", "Apricot", "Jasmine"], price: "58.000" },
-  { origin: "Kintamani, Bali", process: "Washed", notes: ["Citrus", "Vanilla", "Mild"], price: "55.000" },
+  { origin: "Gayo, Aceh", process: "Washed", notes: ["Chocolatey", "Caramel", "Brown Sugar"], price: "55.000", img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" },
+  { origin: "Toraja, Sulawesi", process: "Natural", notes: ["Fruity", "Dark Cherry", "Earthy"], price: "60.000", img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" },
+  { origin: "Flores, NTT", process: "Honey", notes: ["Floral", "Apricot", "Jasmine"], price: "58.000", img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=80" },
+  { origin: "Kintamani, Bali", process: "Washed", notes: ["Citrus", "Vanilla", "Mild"], price: "55.000", img: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80" },
 ];
 
 const nonCoffeeItems = [
-  { name: "Matcha Latte", desc: "Ceremonial grade matcha, oat milk", price: "42.000" },
-  { name: "Artisan Chocolate", desc: "Dark cacao blend, creamy finish", price: "40.000" },
-  { name: "Iced Artisan Tea", desc: "Cold-brew jasmine & hibiscus blend", price: "35.000" },
-  { name: "Berry Mocktail", desc: "Mixed berries, soda, mint", price: "38.000" },
-  { name: "Yuzu Lemonade", desc: "Fresh yuzu, honey, sparkling water", price: "40.000" },
-  { name: "Taro Latte", desc: "Taro paste, steamed milk, vanilla", price: "42.000" },
+  { name: "Matcha Latte", desc: "Ceremonial grade matcha, oat milk", price: "42.000", img: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=400&q=80" },
+  { name: "Artisan Chocolate", desc: "Dark cacao blend, creamy finish", price: "40.000", img: "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?w=400&q=80" },
+  { name: "Iced Artisan Tea", desc: "Cold-brew jasmine & hibiscus blend", price: "35.000", img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80" },
+  { name: "Berry Mocktail", desc: "Mixed berries, soda, mint", price: "38.000", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=400&q=80" },
+  { name: "Yuzu Lemonade", desc: "Fresh yuzu, honey, sparkling water", price: "40.000", img: "https://images.unsplash.com/photo-1523677011781-ac91d1a6e3b5?w=400&q=80" },
+  { name: "Taro Latte", desc: "Taro paste, steamed milk, vanilla", price: "42.000", img: "https://images.unsplash.com/photo-1627740190069-49bc18f9e25a?w=400&q=80" },
 ];
 
 const pastryItems = [
-  { name: "Butter Croissant", desc: "Flaky, buttery, baked fresh daily", price: "32.000" },
-  { name: "Cinnamon Roll", desc: "Soft dough, cinnamon sugar, cream cheese glaze", price: "38.000" },
-  { name: "Fudgy Brownies", desc: "Dense, rich dark chocolate", price: "28.000" },
-  { name: "Banana Loaf", desc: "Moist, lightly spiced, walnut topping", price: "30.000" },
+  { name: "Butter Croissant", desc: "Flaky, buttery, baked fresh daily", price: "32.000", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&q=80" },
+  { name: "Cinnamon Roll", desc: "Soft dough, cinnamon sugar, cream cheese glaze", price: "38.000", img: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=400&q=80" },
+  { name: "Fudgy Brownies", desc: "Dense, rich dark chocolate", price: "28.000", img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&q=80" },
+  { name: "Banana Loaf", desc: "Moist, lightly spiced, walnut topping", price: "30.000", img: "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=400&q=80" },
 ];
 
 const pairings = [
@@ -282,29 +282,35 @@ function SlideEspresso() {
           <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: "1.1rem", color: GOLD, marginTop: 8 }}>Handcrafted with love</p>
         </div>
 
-        {/* Menu list — gaya menu board */}
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        {/* Menu grid dengan foto */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
           {espressoItems.map((item, i) => (
             <div key={item.name} style={{
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-              padding: "16px 0",
+              display: "flex", alignItems: "center",
+              padding: "12px 0",
               borderBottom: `1px solid ${GREEN}15`,
-              gap: 16,
+              gap: 14,
             }}>
-              <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
-                <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: "0.55rem", color: GOLD, minWidth: 20, letterSpacing: "0.1em" }}>
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.25rem", letterSpacing: "0.08em", color: GREEN, lineHeight: 1 }}>
+              {/* Foto item */}
+              <div style={{ width: 64, height: 64, borderRadius: 10, overflow: "hidden", flexShrink: 0 }}>
+                <img src={item.img} alt={item.name}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              </div>
+              {/* Info */}
+              <div style={{ flex: 1 }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 2 }}>
+                  <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: "0.5rem", color: GOLD, letterSpacing: "0.1em" }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.15rem", letterSpacing: "0.08em", color: GREEN, lineHeight: 1, margin: 0 }}>
                     {item.name.toUpperCase()}
                   </p>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.65rem", color: `${GREEN}55`, marginTop: 2 }}>
-                    {item.note}
-                  </p>
                 </div>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.62rem", color: `${GREEN}55`, margin: 0 }}>
+                  {item.note}
+                </p>
               </div>
-              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.15rem", color: GREEN, flexShrink: 0 }}>
+              <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.1rem", color: GREEN, flexShrink: 0 }}>
                 Rp {item.price}
               </span>
             </div>
@@ -382,26 +388,30 @@ function SlideManualBrew() {
                 border: `1px solid ${i % 2 === 0 ? GOLD + "30" : GREEN + "15"}`,
                 borderRadius: 12,
                 overflow: "hidden",
-                boxShadow: "0 2px 8px rgba(8,54,40,0.06)",
               }}>
-                <div style={{ padding: "16px 20px 10px" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6 }}>
-                    <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.15rem", color: i % 2 === 0 ? WHITE : GREEN, letterSpacing: "0.08em", lineHeight: 1 }}>
+                {/* Foto */}
+                <div style={{ height: 120, overflow: "hidden" }}>
+                  <img src={bean.img} alt={bean.origin}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                </div>
+                <div style={{ padding: "12px 14px 10px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
+                    <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", color: i % 2 === 0 ? WHITE : GREEN, letterSpacing: "0.08em", lineHeight: 1, margin: 0 }}>
                       {bean.origin.toUpperCase()}
                     </p>
-                    <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", color: i % 2 === 0 ? GOLD : GREEN, flexShrink: 0, marginLeft: 8 }}>
+                    <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "0.9rem", color: i % 2 === 0 ? GOLD : GREEN, flexShrink: 0, marginLeft: 6 }}>
                       Rp {bean.price}
                     </span>
                   </div>
-                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.58rem", color: i % 2 === 0 ? `${GOLD}cc` : `${GREEN}60`, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 10 }}>
-                    Process: {bean.process}
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.55rem", color: i % 2 === 0 ? `${GOLD}cc` : `${GREEN}60`, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>
+                    {bean.process}
                   </p>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
                     {bean.notes.map(note => (
                       <span key={note} style={{
                         background: i % 2 === 0 ? `${GOLD}20` : `${GREEN}10`,
-                        borderRadius: 999, padding: "3px 10px",
-                        fontSize: "0.6rem",
+                        borderRadius: 999, padding: "2px 8px",
+                        fontSize: "0.55rem",
                         color: i % 2 === 0 ? GOLD : GREEN,
                         fontFamily: "'Montserrat', sans-serif", fontWeight: 600
                       }}>
@@ -479,19 +489,26 @@ function SlideNonCoffee() {
             <div key={item.name} style={{
               background: i % 3 === 0 ? GREEN : WHITE,
               border: `1px solid ${i % 3 === 0 ? GOLD + "30" : GREEN + "12"}`,
-              borderRadius: 10, padding: "16px 18px",
+              borderRadius: 10, overflow: "hidden",
             }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 5 }}>
-                <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.05rem", letterSpacing: "0.06em", color: i % 3 === 0 ? WHITE : GREEN, lineHeight: 1 }}>
-                  {item.name.toUpperCase()}
-                </p>
-                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "0.9rem", color: i % 3 === 0 ? GOLD : GREEN, flexShrink: 0, marginLeft: 6 }}>
-                  Rp {item.price}
-                </span>
+              {/* Foto */}
+              <div style={{ height: 100, overflow: "hidden" }}>
+                <img src={item.img} alt={item.name}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
-              <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.63rem", color: i % 3 === 0 ? `${GOLD}cc` : `${GREEN}55`, lineHeight: 1.5 }}>
-                {item.desc}
-              </p>
+              <div style={{ padding: "10px 14px 12px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
+                  <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", letterSpacing: "0.06em", color: i % 3 === 0 ? WHITE : GREEN, lineHeight: 1, margin: 0 }}>
+                    {item.name.toUpperCase()}
+                  </p>
+                  <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "0.85rem", color: i % 3 === 0 ? GOLD : GREEN, flexShrink: 0, marginLeft: 6 }}>
+                    Rp {item.price}
+                  </span>
+                </div>
+                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.6rem", color: i % 3 === 0 ? `${GOLD}cc` : `${GREEN}55`, lineHeight: 1.4, margin: 0 }}>
+                  {item.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -552,17 +569,24 @@ function SlidePastry() {
               <div key={item.name} style={{
                 background: i % 2 === 0 ? GREEN : WHITE,
                 border: `1px solid ${i % 2 === 0 ? GOLD + "30" : GREEN + "12"}`,
-                borderRadius: 10, padding: "18px",
+                borderRadius: 10, overflow: "hidden",
               }}>
-                <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.15rem", letterSpacing: "0.06em", color: i % 2 === 0 ? WHITE : GREEN, lineHeight: 1, marginBottom: 5 }}>
-                  {item.name.toUpperCase()}
-                </p>
-                <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.63rem", color: i % 2 === 0 ? `${GOLD}cc` : `${GREEN}55`, lineHeight: 1.5, marginBottom: 10 }}>
-                  {item.desc}
-                </p>
-                <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", color: i % 2 === 0 ? GOLD : GREEN }}>
-                  Rp {item.price}
-                </p>
+                {/* Foto */}
+                <div style={{ height: 110, overflow: "hidden" }}>
+                  <img src={item.img} alt={item.name}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                </div>
+                <div style={{ padding: "12px 14px" }}>
+                  <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1rem", letterSpacing: "0.06em", color: i % 2 === 0 ? WHITE : GREEN, lineHeight: 1, marginBottom: 4 }}>
+                    {item.name.toUpperCase()}
+                  </p>
+                  <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.6rem", color: i % 2 === 0 ? `${GOLD}cc` : `${GREEN}55`, lineHeight: 1.4, marginBottom: 8 }}>
+                    {item.desc}
+                  </p>
+                  <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "0.95rem", color: i % 2 === 0 ? GOLD : GREEN }}>
+                    Rp {item.price}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
