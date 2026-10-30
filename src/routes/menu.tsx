@@ -27,14 +27,30 @@ const espressoItems = [
   { name: "Cafe Latte", note: "Espresso + steamed milk", price: "38.000", img: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=400&q=80" },
   { name: "Cappuccino", note: "Equal parts espresso, milk & foam", price: "38.000", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&q=80" },
   { name: "Flat White", note: "Double ristretto + velvety milk", price: "42.000", img: "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=400&q=80" },
-  { name: "Macchiato", note: "Espresso with a touch of foam", price: "35.000", img: "https://images.unsplash.com/photo-1485808191679-5f86510bd9d4?w=400&q=80" },
+  { name: "Macchiato", note: "Espresso with a touch of foam", price: "35.000", img: "https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=400&q=80" },
 ];
 
 const manualBrewItems = [
-  { origin: "Gayo, Aceh", process: "Washed", notes: ["Chocolatey", "Caramel", "Brown Sugar"], price: "55.000", img: "https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=600&q=85" },
-  { origin: "Toraja, Sulawesi", process: "Natural", notes: ["Fruity", "Dark Cherry", "Earthy"], price: "60.000", img: "https://images.unsplash.com/photo-1587734195342-43db1b1f3d90?w=600&q=85" },
-  { origin: "Flores, NTT", process: "Honey", notes: ["Floral", "Apricot", "Jasmine"], price: "58.000", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&q=85" },
-  { origin: "Kintamani, Bali", process: "Washed", notes: ["Citrus", "Vanilla", "Mild"], price: "55.000", img: "https://images.unsplash.com/photo-1559525839-8a212e8f16a1?w=600&q=85" },
+  {
+    origin: "Gayo, Aceh", process: "Washed",
+    notes: ["Chocolatey", "Caramel", "Brown Sugar"], price: "55.000",
+    img: "/bungkusan beans real.jpeg",
+  },
+  {
+    origin: "Toraja, Sulawesi", process: "Natural",
+    notes: ["Fruity", "Dark Cherry", "Earthy"], price: "60.000",
+    img: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=85",
+  },
+  {
+    origin: "Flores, NTT", process: "Honey",
+    notes: ["Floral", "Apricot", "Jasmine"], price: "58.000",
+    img: "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?w=600&q=85",
+  },
+  {
+    origin: "Kintamani, Bali", process: "Washed",
+    notes: ["Citrus", "Vanilla", "Mild"], price: "55.000",
+    img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=85",
+  },
 ];
 
 const nonCoffeeItems = [
@@ -42,8 +58,8 @@ const nonCoffeeItems = [
   { name: "Artisan Chocolate", desc: "Dark cacao blend, creamy finish", price: "40.000", img: "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?w=400&q=80" },
   { name: "Iced Artisan Tea", desc: "Cold-brew jasmine & hibiscus blend", price: "35.000", img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80" },
   { name: "Berry Mocktail", desc: "Mixed berries, soda, mint", price: "38.000", img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=400&q=80" },
-  { name: "Yuzu Lemonade", desc: "Fresh yuzu, honey, sparkling water", price: "40.000", img: "https://images.unsplash.com/photo-1523677011781-ac91d1a6e3b5?w=400&q=80" },
-  { name: "Taro Latte", desc: "Taro paste, steamed milk, vanilla", price: "42.000", img: "https://images.unsplash.com/photo-1627740190069-49bc18f9e25a?w=400&q=80" },
+  { name: "Yuzu Lemonade", desc: "Fresh yuzu, honey, sparkling water", price: "40.000", img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" },
+  { name: "Taro Latte", desc: "Taro paste, steamed milk, vanilla", price: "42.000", img: "https://images.unsplash.com/photo-1598908314732-07113901949e?w=400&q=80" },
 ];
 
 const pastryItems = [
