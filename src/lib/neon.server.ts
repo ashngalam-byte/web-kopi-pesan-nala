@@ -15,21 +15,28 @@ function classifyError(err: unknown): NeonError {
   const message: string = e?.message ?? "";
   let kind = "rejected";
 
-  if (code === "28P01" || code === "28000" || /password authentication failed/.test(message)) kind = "stale_connection";
+  if (code === "28P01" || code === "28000" || /password authentication failed/.test(message))
+    kind = "stale_connection";
   else if (/endpoint.*disabled/i.test(message)) kind = "endpoint_blocked";
   else if (code === "23505") kind = "unique";
   else if (/^2[23]/.test(code)) kind = "input";
-  else if (/ECONNREFUSED|ETIMEDOUT|EAI_AGAIN|network|fetch failed/i.test(message)) kind = "unavailable";
+  else if (/ECONNREFUSED|ETIMEDOUT|EAI_AGAIN|network|fetch failed/i.test(message))
+    kind = "unavailable";
   else if (code === "429") kind = "rate_limited";
 
-  return Object.assign(
-    new Error(`Neon error [${code}]: ${message}`),
-    { status: e?.status ?? 0, code, kind },
-  ) as NeonError;
+  return Object.assign(new Error(`Neon error [${code}]: ${message}`), {
+    status: e?.status ?? 0,
+    code,
+    kind,
+  }) as NeonError;
 }
 
 // Writes: no automatic retry.
-export async function neonExecute(query: string, params: unknown[] = [], _readOnly = false): Promise<NeonResult> {
+export async function neonExecute(
+  query: string,
+  params: unknown[] = [],
+  _readOnly = false,
+): Promise<NeonResult> {
   try {
     const sql = getClient();
     // @neondatabase/serverless tagged-template returns rows directly
@@ -57,9 +64,19 @@ export async function verifyPassword(password: string, stored: string): Promise<
     return false;
   const salt = Uint8Array.from(saltHex.match(/.{2}/g) ?? [], (x) => parseInt(x, 16));
   const expected = Uint8Array.from(expectedHex.match(/.{2}/g) ?? [], (x) => parseInt(x, 16));
-  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveBits"]);
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(password),
+    "PBKDF2",
+    false,
+    ["deriveBits"],
+  );
   const actual = new Uint8Array(
-    await crypto.subtle.deriveBits({ name: "PBKDF2", salt, iterations: 100_000, hash: "SHA-256" }, key, 256),
+    await crypto.subtle.deriveBits(
+      { name: "PBKDF2", salt, iterations: 100_000, hash: "SHA-256" },
+      key,
+      256,
+    ),
   );
   let difference = 0;
   for (let i = 0; i < actual.length; i++) difference |= (actual[i] ?? 0) ^ (expected[i] ?? 0);
@@ -68,8 +85,18 @@ export async function verifyPassword(password: string, stored: string): Promise<
 
 export async function hashPassword(password: string): Promise<string> {
   const salt = crypto.getRandomValues(new Uint8Array(16));
-  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveBits"]);
-  const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", salt, iterations: 100_000, hash: "SHA-256" }, key, 256);
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(password),
+    "PBKDF2",
+    false,
+    ["deriveBits"],
+  );
+  const bits = await crypto.subtle.deriveBits(
+    { name: "PBKDF2", salt, iterations: 100_000, hash: "SHA-256" },
+    key,
+    256,
+  );
   const hex = (b: Uint8Array) => Array.from(b, (x) => x.toString(16).padStart(2, "0")).join("");
   return `pbkdf2$100000$${hex(salt)}$${hex(new Uint8Array(bits))}`;
 }

@@ -73,7 +73,7 @@
   --card-foreground: oklch(0.22 0.03 60);
   --popover: oklch(0.99 0.01 85);
   --popover-foreground: oklch(0.22 0.03 60);
-  --primary: oklch(0.28 0.09 155);      /* #083628 hijau tua Nala */
+  --primary: oklch(0.28 0.09 155); /* #083628 hijau tua Nala */
   --primary-foreground: oklch(0.97 0.015 85);
   --secondary: oklch(0.92 0.02 85);
   --secondary-foreground: oklch(0.22 0.03 60);
@@ -144,5 +144,40 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+}
+
+/* ── NALA design system utilities ─────────────────────────── */
+
+/* Baris chip kategori: gulir horizontal tanpa scrollbar terlihat */
+.nala-chips {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.nala-chips::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Mobile Phone Frame (Tampilan HP / Mobile Mockup) ── */
+@media (min-width: 501px) {
+  .nala-phone-frame {
+    border-radius: 44px !important;
+    border: 10px solid #1e2022 !important;
+    outline: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow:
+      0 30px 80px -15px rgba(8, 54, 40, 0.35),
+      0 0 0 1px rgba(0, 0, 0, 0.1) !important;
+    margin: 24px auto !important;
+    overflow: hidden !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .nala-phone-frame {
+    border-radius: 0 !important;
+    border: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
   }
 }

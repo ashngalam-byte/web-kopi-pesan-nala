@@ -10,12 +10,40 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as HomeRouteImport } from './routes/home'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as MenuRouteImport } from './routes/menu'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as OutletRouteImport } from './routes/outlet'
+import { Route as PaymentSuccessRouteImport } from './routes/payment-success'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ShowcaseRouteImport } from './routes/showcase'
+import { Route as ThankYouRouteImport } from './routes/thank-you'
+import { Route as VerifiedRouteImport } from './routes/verified'
+import { Route as VerifyOtpRouteImport } from './routes/verify-otp'
+import { Route as VerifyPhoneRouteImport } from './routes/verify-phone'
+import { Route as MenuCategoryRouteImport } from './routes/menu.$category'
+import { Route as ProductIdRouteImport } from './routes/product.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -23,40 +51,191 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MenuRoute = MenuRouteImport.update({
-  id: '/menu',
-  path: '/menu',
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutletRoute = OutletRouteImport.update({
+  id: '/outlet',
+  path: '/outlet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentSuccessRoute = PaymentSuccessRouteImport.update({
+  id: '/payment-success',
+  path: '/payment-success',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShowcaseRoute = ShowcaseRouteImport.update({
+  id: '/showcase',
+  path: '/showcase',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThankYouRoute = ThankYouRouteImport.update({
+  id: '/thank-you',
+  path: '/thank-you',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifiedRoute = VerifiedRouteImport.update({
+  id: '/verified',
+  path: '/verified',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifyOtpRoute = VerifyOtpRouteImport.update({
+  id: '/verify-otp',
+  path: '/verify-otp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifyPhoneRoute = VerifyPhoneRouteImport.update({
+  id: '/verify-phone',
+  path: '/verify-phone',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuCategoryRoute = MenuCategoryRouteImport.update({
+  id: '/menu/$category',
+  path: '/menu/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductIdRoute = ProductIdRouteImport.update({
+  id: '/product/$id',
+  path: '/product/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/home': typeof HomeRoute
   '/login': typeof LoginRoute
-  '/menu': typeof MenuRoute
+  '/onboarding': typeof OnboardingRoute
+  '/outlet': typeof OutletRoute
+  '/payment-success': typeof PaymentSuccessRoute
+  '/register': typeof RegisterRoute
+  '/showcase': typeof ShowcaseRoute
+  '/thank-you': typeof ThankYouRoute
+  '/verified': typeof VerifiedRoute
+  '/verify-otp': typeof VerifyOtpRoute
+  '/verify-phone': typeof VerifyPhoneRoute
+  '/menu/$category': typeof MenuCategoryRoute
+  '/product/$id': typeof ProductIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/home': typeof HomeRoute
   '/login': typeof LoginRoute
-  '/menu': typeof MenuRoute
+  '/onboarding': typeof OnboardingRoute
+  '/outlet': typeof OutletRoute
+  '/payment-success': typeof PaymentSuccessRoute
+  '/register': typeof RegisterRoute
+  '/showcase': typeof ShowcaseRoute
+  '/thank-you': typeof ThankYouRoute
+  '/verified': typeof VerifiedRoute
+  '/verify-otp': typeof VerifyOtpRoute
+  '/verify-phone': typeof VerifyPhoneRoute
+  '/menu/$category': typeof MenuCategoryRoute
+  '/product/$id': typeof ProductIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/home': typeof HomeRoute
   '/login': typeof LoginRoute
-  '/menu': typeof MenuRoute
+  '/onboarding': typeof OnboardingRoute
+  '/outlet': typeof OutletRoute
+  '/payment-success': typeof PaymentSuccessRoute
+  '/register': typeof RegisterRoute
+  '/showcase': typeof ShowcaseRoute
+  '/thank-you': typeof ThankYouRoute
+  '/verified': typeof VerifiedRoute
+  '/verify-otp': typeof VerifyOtpRoute
+  '/verify-phone': typeof VerifyPhoneRoute
+  '/menu/$category': typeof MenuCategoryRoute
+  '/product/$id': typeof ProductIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login' | '/menu'
+  fullPaths:
+    | '/'
+    | '/cart'
+    | '/checkout'
+    | '/home'
+    | '/login'
+    | '/onboarding'
+    | '/outlet'
+    | '/payment-success'
+    | '/register'
+    | '/showcase'
+    | '/thank-you'
+    | '/verified'
+    | '/verify-otp'
+    | '/verify-phone'
+    | '/menu/$category'
+    | '/product/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login' | '/menu'
-  id: '__root__' | '/' | '/login' | '/menu'
+  to:
+    | '/'
+    | '/cart'
+    | '/checkout'
+    | '/home'
+    | '/login'
+    | '/onboarding'
+    | '/outlet'
+    | '/payment-success'
+    | '/register'
+    | '/showcase'
+    | '/thank-you'
+    | '/verified'
+    | '/verify-otp'
+    | '/verify-phone'
+    | '/menu/$category'
+    | '/product/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/cart'
+    | '/checkout'
+    | '/home'
+    | '/login'
+    | '/onboarding'
+    | '/outlet'
+    | '/payment-success'
+    | '/register'
+    | '/showcase'
+    | '/thank-you'
+    | '/verified'
+    | '/verify-otp'
+    | '/verify-phone'
+    | '/menu/$category'
+    | '/product/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CartRoute: typeof CartRoute
+  CheckoutRoute: typeof CheckoutRoute
+  HomeRoute: typeof HomeRoute
   LoginRoute: typeof LoginRoute
-  MenuRoute: typeof MenuRoute
+  OnboardingRoute: typeof OnboardingRoute
+  OutletRoute: typeof OutletRoute
+  PaymentSuccessRoute: typeof PaymentSuccessRoute
+  RegisterRoute: typeof RegisterRoute
+  ShowcaseRoute: typeof ShowcaseRoute
+  ThankYouRoute: typeof ThankYouRoute
+  VerifiedRoute: typeof VerifiedRoute
+  VerifyOtpRoute: typeof VerifyOtpRoute
+  VerifyPhoneRoute: typeof VerifyPhoneRoute
+  MenuCategoryRoute: typeof MenuCategoryRoute
+  ProductIdRoute: typeof ProductIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,6 +247,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/login': {
       id: '/login'
       path: '/login'
@@ -75,11 +275,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/menu': {
-      id: '/menu'
-      path: '/menu'
-      fullPath: '/menu'
-      preLoaderRoute: typeof MenuRouteImport
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outlet': {
+      id: '/outlet'
+      path: '/outlet'
+      fullPath: '/outlet'
+      preLoaderRoute: typeof OutletRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payment-success': {
+      id: '/payment-success'
+      path: '/payment-success'
+      fullPath: '/payment-success'
+      preLoaderRoute: typeof PaymentSuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/showcase': {
+      id: '/showcase'
+      path: '/showcase'
+      fullPath: '/showcase'
+      preLoaderRoute: typeof ShowcaseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thank-you': {
+      id: '/thank-you'
+      path: '/thank-you'
+      fullPath: '/thank-you'
+      preLoaderRoute: typeof ThankYouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verified': {
+      id: '/verified'
+      path: '/verified'
+      fullPath: '/verified'
+      preLoaderRoute: typeof VerifiedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verify-otp': {
+      id: '/verify-otp'
+      path: '/verify-otp'
+      fullPath: '/verify-otp'
+      preLoaderRoute: typeof VerifyOtpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verify-phone': {
+      id: '/verify-phone'
+      path: '/verify-phone'
+      fullPath: '/verify-phone'
+      preLoaderRoute: typeof VerifyPhoneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu/$category': {
+      id: '/menu/$category'
+      path: '/menu/$category'
+      fullPath: '/menu/$category'
+      preLoaderRoute: typeof MenuCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/$id': {
+      id: '/product/$id'
+      path: '/product/$id'
+      fullPath: '/product/$id'
+      preLoaderRoute: typeof ProductIdRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -87,8 +357,21 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CartRoute: CartRoute,
+  CheckoutRoute: CheckoutRoute,
+  HomeRoute: HomeRoute,
   LoginRoute: LoginRoute,
-  MenuRoute: MenuRoute,
+  OnboardingRoute: OnboardingRoute,
+  OutletRoute: OutletRoute,
+  PaymentSuccessRoute: PaymentSuccessRoute,
+  RegisterRoute: RegisterRoute,
+  ShowcaseRoute: ShowcaseRoute,
+  ThankYouRoute: ThankYouRoute,
+  VerifiedRoute: VerifiedRoute,
+  VerifyOtpRoute: VerifyOtpRoute,
+  VerifyPhoneRoute: VerifyPhoneRoute,
+  MenuCategoryRoute: MenuCategoryRoute,
+  ProductIdRoute: ProductIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

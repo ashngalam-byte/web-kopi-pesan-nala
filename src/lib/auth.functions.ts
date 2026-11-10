@@ -2,19 +2,33 @@ import { createServerFn } from "@tanstack/react-start";
 
 export const loginUser = createServerFn({ method: "POST" })
   .inputValidator((data: { email: string; password: string }) => {
-    const email = String(data?.email ?? "").trim().toLowerCase();
+    const email = String(data?.email ?? "")
+      .trim()
+      .toLowerCase();
     const password = String(data?.password ?? "");
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 255 || !password || password.length > 128) throw new Error("Email atau password tidak valid.");
+    if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+      email.length > 255 ||
+      !password ||
+      password.length > 128
+    )
+      throw new Error("Email atau password tidak valid.");
     return { email, password };
   })
   .handler(async ({ data }) => {
     const { neonQuery, verifyPassword } = await import("./neon.server");
     const { userSession } = await import("./auth.server");
     try {
-      const result = await neonQuery("select id, password_hash from public.users where email = $1 limit 1", [data.email]);
+      const result = await neonQuery(
+        "select id, password_hash from public.users where email = $1 limit 1",
+        [data.email],
+      );
       const row = result.rows[0];
       const fallback = `pbkdf2$100000$${"0".repeat(32)}$${"0".repeat(64)}`;
-      const valid = await verifyPassword(data.password, row ? String(row["password_hash"]) : fallback);
+      const valid = await verifyPassword(
+        data.password,
+        row ? String(row["password_hash"]) : fallback,
+      );
       if (!row || !valid) return { ok: false as const, error: "Email atau password salah." };
       const session = await userSession();
       await session.clear();
@@ -23,7 +37,12 @@ export const loginUser = createServerFn({ method: "POST" })
     } catch (error) {
       console.error(error);
       const kind = (error as { kind?: string })?.kind;
-      const message = kind === "stale_connection" ? "Koneksi database perlu diperbarui oleh pemilik aplikasi." : kind === "endpoint_blocked" ? "Database belum tersedia. Pemilik aplikasi perlu memeriksa Neon." : "Login belum dapat diproses. Coba lagi sebentar.";
+      const message =
+        kind === "stale_connection"
+          ? "Koneksi database perlu diperbarui oleh pemilik aplikasi."
+          : kind === "endpoint_blocked"
+            ? "Database belum tersedia. Pemilik aplikasi perlu memeriksa Neon."
+            : "Login belum dapat diproses. Coba lagi sebentar.";
       return { ok: false as const, error: message };
     }
   });
