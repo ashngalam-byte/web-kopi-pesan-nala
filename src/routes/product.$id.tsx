@@ -76,8 +76,6 @@ function ProductDetailPage() {
           >
             <ArrowLeft size={20} />
           </button>
-
-
         </div>
 
         <div

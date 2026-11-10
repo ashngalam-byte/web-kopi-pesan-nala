@@ -68,7 +68,6 @@ function OutletPage() {
           </h1>
         </div>
 
-
         {/* Toggle Pick Up / Delivery */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 18 }}>
           {(["pickup", "delivery"] as const).map((m) => (
@@ -198,9 +197,7 @@ function OutletPage() {
         )}
 
         <div style={{ marginTop: "auto", paddingTop: 24 }}>
-          <PrimaryButton onClick={() => void navigate({ to: "/cart" })}>
-            Pilih Outlet
-          </PrimaryButton>
+          <PrimaryButton onClick={() => void navigate({ to: "/cart" })}>Pilih Outlet</PrimaryButton>
         </div>
       </div>
     </Screen>

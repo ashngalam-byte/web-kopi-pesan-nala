@@ -252,7 +252,7 @@ function OnboardingPage() {
               gap: 8,
             }}
           >
-            {isLast ? "Mulai Sekarang (Beranda)" : "Lanjut"} &gt;
+            {isLast ? "Mulai Sekarang" : "Lanjut"} →
           </button>
         </div>
       </div>

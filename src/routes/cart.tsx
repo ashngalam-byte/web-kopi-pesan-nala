@@ -85,7 +85,6 @@ function CartPage() {
           </h1>
         </div>
 
-
         {cart.items.length === 0 ? (
           <div
             style={{

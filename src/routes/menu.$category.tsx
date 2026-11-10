@@ -47,7 +47,6 @@ function MenuCategoryPage() {
 
   const items = useMemo(() => productsByCategory(category), [category]);
 
-
   // Background khusus Signature Coffee Menu (Layar 15)
   const isSignature = category === "signature";
   const pageBg = isSignature ? "#F0E9DF" : colors.paper;
@@ -116,7 +115,6 @@ function MenuCategoryPage() {
           title={activeCat?.title ?? "Menu"}
           onBack={() => void navigate({ to: "/home" })}
         />
-
 
         {/* Baris Chip 7 Kategori Menu */}
         <CategoryChips

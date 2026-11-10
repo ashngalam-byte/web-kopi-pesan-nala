@@ -44,7 +44,6 @@ function ThankYouPage() {
         </div>
 
         <div style={{ flex: 1, padding: "8px 28px 0", textAlign: "center" }}>
-
           {/* Logo versi putih dari aset asli */}
           <img
             src="/nala-logo.png"

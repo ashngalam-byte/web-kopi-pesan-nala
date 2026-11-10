@@ -49,7 +49,6 @@ function PaymentSuccessPage() {
         </div>
 
         <div style={{ flex: 1, padding: "8px 28px 0", textAlign: "center" }}>
-
           {/* Ikon Sukses Hijau Besar */}
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div

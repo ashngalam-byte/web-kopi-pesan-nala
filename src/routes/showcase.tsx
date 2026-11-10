@@ -142,7 +142,8 @@ function PhoneCard({
           borderRadius: 36,
           border: "8px solid #1E2022",
           outline: "1px solid rgba(0,0,0,0.12)",
-          boxShadow: "0 18px 40px -10px rgba(8, 54, 40, 0.28), 0 0 0 1px rgba(255,255,255,0.08) inset",
+          boxShadow:
+            "0 18px 40px -10px rgba(8, 54, 40, 0.28), 0 0 0 1px rgba(255,255,255,0.08) inset",
           overflow: "hidden",
           display: "flex",
           flexDirection: "column",
@@ -287,7 +288,8 @@ function ShowcasePage() {
                 color: colors.cream,
               }}
             >
-              Urut dari atas samping kiri sampai ke bawah gambar samping kanan (3 Baris: Onboarding, Menu, Checkout)
+              Urut dari atas samping kiri sampai ke bawah gambar samping kanan (3 Baris: Onboarding,
+              Menu, Checkout)
             </p>
           </div>
         </div>
@@ -320,7 +322,9 @@ function ShowcasePage() {
             >
               <ZoomOut size={16} />
             </button>
-            <span style={{ fontSize: "0.75rem", fontWeight: 700, minWidth: 42, textAlign: "center" }}>
+            <span
+              style={{ fontSize: "0.75rem", fontWeight: 700, minWidth: 42, textAlign: "center" }}
+            >
               {Math.round(zoom * 100)}%
             </span>
             <button
@@ -485,7 +489,9 @@ function ShowcasePage() {
               subtitle="Layar Masuk"
               linkTo="/login"
             >
-              <div style={{ padding: "16px 18px", display: "flex", flexDirection: "column", flex: 1 }}>
+              <div
+                style={{ padding: "16px 18px", display: "flex", flexDirection: "column", flex: 1 }}
+              >
                 <div style={{ display: "flex", justifyContent: "center", paddingBottom: 12 }}>
                   <NalaLogo size={70} />
                 </div>
@@ -525,7 +531,10 @@ function ShowcasePage() {
                         fontSize: "0.78rem",
                       }}
                     />
-                    <Eye size={14} style={{ position: "absolute", right: 10, top: 12, opacity: 0.5 }} />
+                    <Eye
+                      size={14}
+                      style={{ position: "absolute", right: 10, top: 12, opacity: 0.5 }}
+                    />
                   </div>
                   <div
                     style={{
@@ -556,8 +565,16 @@ function ShowcasePage() {
                 <div style={{ marginTop: 12 }}>
                   <SocialLoginRow />
                 </div>
-                <p style={{ marginTop: "auto", textAlign: "center", fontSize: "0.7rem", color: colors.muted }}>
-                  Don't have an account? <span style={{ color: colors.caramel, fontWeight: 700 }}>Sign Up</span>
+                <p
+                  style={{
+                    marginTop: "auto",
+                    textAlign: "center",
+                    fontSize: "0.7rem",
+                    color: colors.muted,
+                  }}
+                >
+                  Don't have an account?{" "}
+                  <span style={{ color: colors.caramel, fontWeight: 700 }}>Sign Up</span>
                 </p>
               </div>
             </PhoneCard>
@@ -571,7 +588,9 @@ function ShowcasePage() {
               subtitle="Layar Daftar"
               linkTo="/register"
             >
-              <div style={{ padding: "14px 18px", display: "flex", flexDirection: "column", flex: 1 }}>
+              <div
+                style={{ padding: "14px 18px", display: "flex", flexDirection: "column", flex: 1 }}
+              >
                 <div style={{ display: "flex", justifyContent: "center", paddingBottom: 8 }}>
                   <NalaLogo size={65} />
                 </div>
@@ -710,7 +729,14 @@ function ShowcasePage() {
                 <h3 style={{ margin: "0 0 6px", fontFamily: font.display, fontSize: "1.1rem" }}>
                   Verifikasi Nomor Telepon
                 </h3>
-                <p style={{ margin: "0 0 20px", fontSize: "0.72rem", color: colors.muted, lineHeight: 1.4 }}>
+                <p
+                  style={{
+                    margin: "0 0 20px",
+                    fontSize: "0.72rem",
+                    color: colors.muted,
+                    lineHeight: 1.4,
+                  }}
+                >
                   Masukkan nomor telepon Anda untuk verifikasi akun
                 </p>
                 <div style={{ display: "flex", gap: 6, width: "100%", marginBottom: 16 }}>
@@ -781,11 +807,14 @@ function ShowcasePage() {
                   Masukkan Kode OTP
                 </h3>
                 <p style={{ margin: "0 0 22px", fontSize: "0.72rem", color: colors.muted }}>
-                  Kode sudah dikirim ke <strong style={{ color: colors.ink }}>+62 812 3456 7890</strong>
+                  Kode sudah dikirim ke{" "}
+                  <strong style={{ color: colors.ink }}>+62 812 3456 7890</strong>
                 </p>
 
                 {/* 6 Digit Boxes sesuai gambar desain: 1 3 2 5 4 8 */}
-                <div style={{ display: "flex", gap: 6, justifyContent: "center", marginBottom: 16 }}>
+                <div
+                  style={{ display: "flex", gap: 6, justifyContent: "center", marginBottom: 16 }}
+                >
                   {["1", "3", "2", "5", "4", "8"].map((num, i) => (
                     <div
                       key={i}
@@ -865,12 +894,27 @@ function ShowcasePage() {
                 >
                   <Check size={52} color="#fff" strokeWidth={3.5} />
                 </div>
-                <h3 style={{ margin: "0 0 10px", fontFamily: font.display, fontSize: "1.2rem", lineHeight: 1.3 }}>
+                <h3
+                  style={{
+                    margin: "0 0 10px",
+                    fontFamily: font.display,
+                    fontSize: "1.2rem",
+                    lineHeight: 1.3,
+                  }}
+                >
                   Akun Anda
                   <br />
                   Berhasil Diverifikasi!
                 </h3>
-                <p style={{ margin: 0, fontSize: "0.75rem", color: colors.ink, lineHeight: 1.5, fontWeight: 600 }}>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: "0.75rem",
+                    color: colors.ink,
+                    lineHeight: 1.5,
+                    fontWeight: 600,
+                  }}
+                >
                   Sekarang Anda dapat menikmati pengalaman terbaik di Nala Coffee Roastery
                 </p>
                 <button
@@ -902,25 +946,79 @@ function ShowcasePage() {
               bg={colors.cream}
               linkTo="/onboarding?step=1"
             >
-              <div style={{ padding: "12px 14px 16px", display: "flex", flexDirection: "column", flex: 1 }}>
+              <div
+                style={{
+                  padding: "12px 14px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  flex: 1,
+                }}
+              >
                 <img
                   src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80"
                   alt="Onboarding 1"
                   style={{ width: "100%", height: 260, objectFit: "cover", borderRadius: 16 }}
                 />
-                <div style={{ display: "flex", justifyContent: "center", gap: 6, margin: "14px 0 8px" }}>
-                  <span style={{ width: 16, height: 6, borderRadius: 999, background: colors.green }} />
-                  <span style={{ width: 6, height: 6, borderRadius: 999, background: "rgba(8,54,40,0.25)" }} />
-                  <span style={{ width: 6, height: 6, borderRadius: 999, background: "rgba(8,54,40,0.25)" }} />
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: 6,
+                    margin: "14px 0 8px",
+                  }}
+                >
+                  <span
+                    style={{ width: 16, height: 6, borderRadius: 999, background: colors.green }}
+                  />
+                  <span
+                    style={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: 999,
+                      background: "rgba(8,54,40,0.25)",
+                    }}
+                  />
+                  <span
+                    style={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: 999,
+                      background: "rgba(8,54,40,0.25)",
+                    }}
+                  />
                 </div>
-                <h4 style={{ margin: "0 0 4px", fontFamily: font.display, fontSize: "1.05rem", textAlign: "center" }}>
+                <h4
+                  style={{
+                    margin: "0 0 4px",
+                    fontFamily: font.display,
+                    fontSize: "1.05rem",
+                    textAlign: "center",
+                  }}
+                >
                   Discover your perfect cup
                 </h4>
-                <p style={{ margin: 0, fontSize: "0.68rem", color: colors.muted, textAlign: "center", lineHeight: 1.4 }}>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: "0.68rem",
+                    color: colors.muted,
+                    textAlign: "center",
+                    lineHeight: 1.4,
+                  }}
+                >
                   Explore specialty coffee, from rich espresso to smooth brews and beans.
                 </p>
-                <div style={{ display: "flex", justifyContent: "space-between", marginTop: "auto", paddingTop: 10 }}>
-                  <span style={{ fontSize: "0.75rem", color: colors.muted, fontWeight: 700 }}>Skip</span>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginTop: "auto",
+                    paddingTop: 10,
+                  }}
+                >
+                  <span style={{ fontSize: "0.75rem", color: colors.muted, fontWeight: 700 }}>
+                    Skip
+                  </span>
                   <button
                     type="button"
                     style={{
@@ -949,25 +1047,79 @@ function ShowcasePage() {
               bg={colors.cream}
               linkTo="/onboarding?step=2"
             >
-              <div style={{ padding: "12px 14px 16px", display: "flex", flexDirection: "column", flex: 1 }}>
+              <div
+                style={{
+                  padding: "12px 14px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  flex: 1,
+                }}
+              >
                 <img
                   src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80"
                   alt="Onboarding 2"
                   style={{ width: "100%", height: 260, objectFit: "cover", borderRadius: 16 }}
                 />
-                <div style={{ display: "flex", justifyContent: "center", gap: 6, margin: "14px 0 8px" }}>
-                  <span style={{ width: 6, height: 6, borderRadius: 999, background: "rgba(8,54,40,0.25)" }} />
-                  <span style={{ width: 16, height: 6, borderRadius: 999, background: colors.green }} />
-                  <span style={{ width: 6, height: 6, borderRadius: 999, background: "rgba(8,54,40,0.25)" }} />
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: 6,
+                    margin: "14px 0 8px",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: 999,
+                      background: "rgba(8,54,40,0.25)",
+                    }}
+                  />
+                  <span
+                    style={{ width: 16, height: 6, borderRadius: 999, background: colors.green }}
+                  />
+                  <span
+                    style={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: 999,
+                      background: "rgba(8,54,40,0.25)",
+                    }}
+                  />
                 </div>
-                <h4 style={{ margin: "0 0 4px", fontFamily: font.display, fontSize: "1.05rem", textAlign: "center" }}>
+                <h4
+                  style={{
+                    margin: "0 0 4px",
+                    fontFamily: font.display,
+                    fontSize: "1.05rem",
+                    textAlign: "center",
+                  }}
+                >
                   Coffee, crafted for you
                 </h4>
-                <p style={{ margin: 0, fontSize: "0.68rem", color: colors.muted, textAlign: "center", lineHeight: 1.4 }}>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: "0.68rem",
+                    color: colors.muted,
+                    textAlign: "center",
+                    lineHeight: 1.4,
+                  }}
+                >
                   Disajikan dengan penuh ketelitian oleh barista berpengalaman.
                 </p>
-                <div style={{ display: "flex", justifyContent: "space-between", marginTop: "auto", paddingTop: 10 }}>
-                  <span style={{ fontSize: "0.75rem", color: colors.muted, fontWeight: 700 }}>Skip</span>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginTop: "auto",
+                    paddingTop: 10,
+                  }}
+                >
+                  <span style={{ fontSize: "0.75rem", color: colors.muted, fontWeight: 700 }}>
+                    Skip
+                  </span>
                   <button
                     type="button"
                     style={{
@@ -996,25 +1148,79 @@ function ShowcasePage() {
               bg={colors.cream}
               linkTo="/onboarding?step=3"
             >
-              <div style={{ padding: "12px 14px 16px", display: "flex", flexDirection: "column", flex: 1 }}>
+              <div
+                style={{
+                  padding: "12px 14px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  flex: 1,
+                }}
+              >
                 <img
                   src="/bungkusan beans real.jpeg"
                   alt="Onboarding 3 Beans"
                   style={{ width: "100%", height: 260, objectFit: "cover", borderRadius: 16 }}
                 />
-                <div style={{ display: "flex", justifyContent: "center", gap: 6, margin: "14px 0 8px" }}>
-                  <span style={{ width: 6, height: 6, borderRadius: 999, background: "rgba(8,54,40,0.25)" }} />
-                  <span style={{ width: 6, height: 6, borderRadius: 999, background: "rgba(8,54,40,0.25)" }} />
-                  <span style={{ width: 16, height: 6, borderRadius: 999, background: colors.green }} />
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: 6,
+                    margin: "14px 0 8px",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: 999,
+                      background: "rgba(8,54,40,0.25)",
+                    }}
+                  />
+                  <span
+                    style={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: 999,
+                      background: "rgba(8,54,40,0.25)",
+                    }}
+                  />
+                  <span
+                    style={{ width: 16, height: 6, borderRadius: 999, background: colors.green }}
+                  />
                 </div>
-                <h4 style={{ margin: "0 0 4px", fontFamily: font.display, fontSize: "1.05rem", textAlign: "center" }}>
+                <h4
+                  style={{
+                    margin: "0 0 4px",
+                    fontFamily: font.display,
+                    fontSize: "1.05rem",
+                    textAlign: "center",
+                  }}
+                >
                   From Aceh Gayo to your cup
                 </h4>
-                <p style={{ margin: 0, fontSize: "0.68rem", color: colors.muted, textAlign: "center", lineHeight: 1.4 }}>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: "0.68rem",
+                    color: colors.muted,
+                    textAlign: "center",
+                    lineHeight: 1.4,
+                  }}
+                >
                   Biji kopi single-origin pilihan langsung dari petani lokal terbaik Indonesia.
                 </p>
-                <div style={{ display: "flex", justifyContent: "space-between", marginTop: "auto", paddingTop: 10 }}>
-                  <span style={{ fontSize: "0.75rem", color: colors.muted, fontWeight: 700 }}>Skip</span>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginTop: "auto",
+                    paddingTop: 10,
+                  }}
+                >
+                  <span style={{ fontSize: "0.75rem", color: colors.muted, fontWeight: 700 }}>
+                    Skip
+                  </span>
                   <button
                     type="button"
                     style={{
@@ -1093,14 +1299,30 @@ function ShowcasePage() {
               subtitle="Good Coffee, Good Mood"
               linkTo="/home"
             >
-              <div style={{ padding: "10px 14px", flex: 1, display: "flex", flexDirection: "column" }}>
+              <div
+                style={{ padding: "10px 14px", flex: 1, display: "flex", flexDirection: "column" }}
+              >
                 {/* Header */}
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: 8,
+                  }}
+                >
                   <NalaLogo variant="row" size={32} />
                   <Bell size={16} />
                 </div>
                 {/* Hero Banner */}
-                <div style={{ position: "relative", borderRadius: 12, overflow: "hidden", height: 110 }}>
+                <div
+                  style={{
+                    position: "relative",
+                    borderRadius: 12,
+                    overflow: "hidden",
+                    height: 110,
+                  }}
+                >
                   <img
                     src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2087?w=600&q=80"
                     alt="Hero"
@@ -1110,7 +1332,8 @@ function ShowcasePage() {
                     style={{
                       position: "absolute",
                       inset: 0,
-                      background: "linear-gradient(90deg, rgba(8,54,40,0.7) 0%, rgba(8,54,40,0.1) 80%)",
+                      background:
+                        "linear-gradient(90deg, rgba(8,54,40,0.7) 0%, rgba(8,54,40,0.1) 80%)",
                       padding: 10,
                       display: "flex",
                       flexDirection: "column",
@@ -1126,7 +1349,9 @@ function ShowcasePage() {
                 </div>
 
                 {/* Categories Grid */}
-                <p style={{ margin: "10px 0 6px", fontWeight: 700, fontSize: "0.75rem" }}>Explore Our Menu</p>
+                <p style={{ margin: "10px 0 6px", fontWeight: 700, fontSize: "0.75rem" }}>
+                  Explore Our Menu
+                </p>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 6 }}>
                   {CATEGORIES.slice(0, 4).map((c) => (
                     <div
@@ -1143,7 +1368,13 @@ function ShowcasePage() {
                       <img
                         src={c.image}
                         alt={c.label}
-                        style={{ width: "100%", height: 36, objectFit: "cover", borderRadius: 6, marginBottom: 3 }}
+                        style={{
+                          width: "100%",
+                          height: 36,
+                          objectFit: "cover",
+                          borderRadius: 6,
+                          marginBottom: 3,
+                        }}
                       />
                       <span>{c.label}</span>
                     </div>
@@ -1196,10 +1427,19 @@ function ShowcasePage() {
                   bg={cardBg}
                   linkTo={`/menu/${menuItem.cat}`}
                 >
-                  <div style={{ padding: "8px 12px 12px", display: "flex", flexDirection: "column", flex: 1 }}>
+                  <div
+                    style={{
+                      padding: "8px 12px 12px",
+                      display: "flex",
+                      flexDirection: "column",
+                      flex: 1,
+                    }}
+                  >
                     <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
                       <ArrowLeft size={14} />
-                      <span style={{ fontFamily: font.display, fontSize: "0.95rem", fontWeight: 700 }}>
+                      <span
+                        style={{ fontFamily: font.display, fontSize: "0.95rem", fontWeight: 700 }}
+                      >
                         {menuItem.title}
                       </span>
                     </div>
@@ -1225,7 +1465,9 @@ function ShowcasePage() {
                     </div>
 
                     {/* 2-Column Product Grid */}
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, flex: 1 }}>
+                    <div
+                      style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, flex: 1 }}
+                    >
                       {items.map((prod) => (
                         <div
                           key={prod.id}
@@ -1242,16 +1484,43 @@ function ShowcasePage() {
                           <img
                             src={prod.image}
                             alt={prod.name}
-                            style={{ width: "100%", height: 55, objectFit: "cover", borderRadius: 6 }}
+                            style={{
+                              width: "100%",
+                              height: 55,
+                              objectFit: "cover",
+                              borderRadius: 6,
+                            }}
                           />
-                          <p style={{ margin: "4px 0 2px", fontWeight: 700, fontSize: "0.7rem", color: colors.green }}>
+                          <p
+                            style={{
+                              margin: "4px 0 2px",
+                              fontWeight: 700,
+                              fontSize: "0.7rem",
+                              color: colors.green,
+                            }}
+                          >
                             {prod.name}
                           </p>
-                          <p style={{ margin: "0 0 4px", fontSize: "0.68rem", fontWeight: 700, color: colors.ink }}>
+                          <p
+                            style={{
+                              margin: "0 0 4px",
+                              fontSize: "0.68rem",
+                              fontWeight: 700,
+                              color: colors.ink,
+                            }}
+                          >
                             {formatRp(prod.price)}*
                           </p>
-                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                            <span style={{ fontSize: "0.58rem", color: colors.muted }}>Ukuran M</span>
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                            }}
+                          >
+                            <span style={{ fontSize: "0.58rem", color: colors.muted }}>
+                              Ukuran M
+                            </span>
                             <span
                               style={{
                                 width: 16,
@@ -1358,15 +1627,38 @@ function ShowcasePage() {
                   alt="Nala Coffee Milk"
                   style={{ width: "100%", height: 180, objectFit: "cover" }}
                 />
-                <div style={{ padding: "12px 14px", flex: 1, display: "flex", flexDirection: "column" }}>
-                  <h3 style={{ margin: 0, fontFamily: font.display, fontSize: "1.2rem", color: colors.green }}>
+                <div
+                  style={{
+                    padding: "12px 14px",
+                    flex: 1,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <h3
+                    style={{
+                      margin: 0,
+                      fontFamily: font.display,
+                      fontSize: "1.2rem",
+                      color: colors.green,
+                    }}
+                  >
                     Nala Coffee Milk
                   </h3>
-                  <p style={{ margin: "4px 0", fontSize: "1.05rem", fontWeight: 700 }}>Rp 13.000*</p>
+                  <p style={{ margin: "4px 0", fontSize: "1.05rem", fontWeight: 700 }}>
+                    Rp 13.000*
+                  </p>
                   <p style={{ margin: "0 0 6px", fontSize: "0.72rem", color: colors.muted }}>
                     ⭐ 4.8 (1.200 ulasan)
                   </p>
-                  <p style={{ margin: "0 0 10px", fontSize: "0.68rem", color: colors.muted, lineHeight: 1.4 }}>
+                  <p
+                    style={{
+                      margin: "0 0 10px",
+                      fontSize: "0.68rem",
+                      color: colors.muted,
+                      lineHeight: 1.4,
+                    }}
+                  >
                     Perpaduan kopi pilihan dan susu creamy dengan gula aren organik khas Nala.
                   </p>
                   <div style={{ display: "flex", gap: 6, marginBottom: 12 }}>
@@ -1414,8 +1706,17 @@ function ShowcasePage() {
               subtitle="Map & Outlet"
               linkTo="/outlet"
             >
-              <div style={{ padding: "10px 14px", flex: 1, display: "flex", flexDirection: "column" }}>
-                <h4 style={{ margin: "0 0 8px", fontFamily: font.display, fontSize: "1.05rem", textAlign: "center" }}>
+              <div
+                style={{ padding: "10px 14px", flex: 1, display: "flex", flexDirection: "column" }}
+              >
+                <h4
+                  style={{
+                    margin: "0 0 8px",
+                    fontFamily: font.display,
+                    fontSize: "1.05rem",
+                    textAlign: "center",
+                  }}
+                >
                   Pilih Outlet
                 </h4>
                 <div style={{ display: "flex", gap: 6, marginBottom: 8 }}>
@@ -1482,9 +1783,20 @@ function ShowcasePage() {
                     style={{ width: 50, height: 50, borderRadius: 8, objectFit: "cover" }}
                   />
                   <div>
-                    <p style={{ margin: 0, fontWeight: 700, fontSize: "0.8rem" }}>Nala Coffee Roastery</p>
-                    <p style={{ margin: "2px 0 0", fontSize: "0.68rem", color: colors.muted }}>Jl. Surabaya No.12</p>
-                    <p style={{ margin: "2px 0 0", fontSize: "0.68rem", color: colors.green, fontWeight: 700 }}>
+                    <p style={{ margin: 0, fontWeight: 700, fontSize: "0.8rem" }}>
+                      Nala Coffee Roastery
+                    </p>
+                    <p style={{ margin: "2px 0 0", fontSize: "0.68rem", color: colors.muted }}>
+                      Jl. Surabaya No.12
+                    </p>
+                    <p
+                      style={{
+                        margin: "2px 0 0",
+                        fontSize: "0.68rem",
+                        color: colors.green,
+                        fontWeight: 700,
+                      }}
+                    >
                       1.2 Km
                     </p>
                   </div>
@@ -1516,23 +1828,50 @@ function ShowcasePage() {
               subtitle="Pesanan Anda"
               linkTo="/cart"
             >
-              <div style={{ padding: "12px 14px", flex: 1, display: "flex", flexDirection: "column" }}>
-                <h4 style={{ margin: "0 0 10px", fontFamily: font.display, fontSize: "1.1rem", textAlign: "center" }}>
+              <div
+                style={{ padding: "12px 14px", flex: 1, display: "flex", flexDirection: "column" }}
+              >
+                <h4
+                  style={{
+                    margin: "0 0 10px",
+                    fontFamily: font.display,
+                    fontSize: "1.1rem",
+                    textAlign: "center",
+                  }}
+                >
                   Keranjang
                 </h4>
                 {/* Item card */}
-                <div style={{ display: "flex", gap: 10, padding: "8px 0", borderBottom: `1px solid ${colors.line}` }}>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 10,
+                    padding: "8px 0",
+                    borderBottom: `1px solid ${colors.line}`,
+                  }}
+                >
                   <img
                     src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80"
                     alt="Nala Milk"
                     style={{ width: 56, height: 56, borderRadius: 8, objectFit: "cover" }}
                   />
                   <div style={{ flex: 1 }}>
-                    <p style={{ margin: 0, fontWeight: 700, fontSize: "0.82rem", color: colors.green }}>
+                    <p
+                      style={{
+                        margin: 0,
+                        fontWeight: 700,
+                        fontSize: "0.82rem",
+                        color: colors.green,
+                      }}
+                    >
                       Nala Coffee Milk
                     </p>
-                    <p style={{ margin: "2px 0 0", fontSize: "0.68rem", color: colors.muted }}>Size: M</p>
-                    <p style={{ margin: "4px 0 0", fontWeight: 700, fontSize: "0.82rem" }}>Rp 13.000*</p>
+                    <p style={{ margin: "2px 0 0", fontSize: "0.68rem", color: colors.muted }}>
+                      Size: M
+                    </p>
+                    <p style={{ margin: "4px 0 0", fontWeight: 700, fontSize: "0.82rem" }}>
+                      Rp 13.000*
+                    </p>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                     <span style={{ fontSize: "0.75rem", fontWeight: 700 }}>1x</span>
@@ -1541,7 +1880,15 @@ function ShowcasePage() {
                 </div>
 
                 {/* Subtotal & Total */}
-                <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: 4, fontSize: "0.72rem" }}>
+                <div
+                  style={{
+                    marginTop: "auto",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 4,
+                    fontSize: "0.72rem",
+                  }}
+                >
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span>Subtotal</span>
                     <span style={{ fontWeight: 700 }}>Rp 13.000</span>
@@ -1592,26 +1939,62 @@ function ShowcasePage() {
               subtitle="Alamat & Pembayaran"
               linkTo="/checkout"
             >
-              <div style={{ padding: "10px 14px", flex: 1, display: "flex", flexDirection: "column", fontSize: "0.7rem" }}>
-                <h4 style={{ margin: "0 0 8px", fontFamily: font.display, fontSize: "1.05rem", textAlign: "center" }}>
+              <div
+                style={{
+                  padding: "10px 14px",
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  fontSize: "0.7rem",
+                }}
+              >
+                <h4
+                  style={{
+                    margin: "0 0 8px",
+                    fontFamily: font.display,
+                    fontSize: "1.05rem",
+                    textAlign: "center",
+                  }}
+                >
                   Checkout
                 </h4>
                 {/* Alamat */}
                 <p style={{ margin: "0 0 3px", fontWeight: 700 }}>Alamat Pengiriman</p>
-                <div style={{ padding: 6, borderRadius: 6, background: colors.creamSoft, marginBottom: 6 }}>
+                <div
+                  style={{
+                    padding: 6,
+                    borderRadius: 6,
+                    background: colors.creamSoft,
+                    marginBottom: 6,
+                  }}
+                >
                   📍 Jl. Surabaya No.12 (Outlet Pick Up)
                 </div>
 
                 {/* Metode Pengiriman */}
                 <p style={{ margin: "4px 0 3px", fontWeight: 700 }}>Metode Pengiriman</p>
-                <div style={{ padding: 6, borderRadius: 6, border: `1px solid ${colors.green}`, marginBottom: 6 }}>
+                <div
+                  style={{
+                    padding: 6,
+                    borderRadius: 6,
+                    border: `1px solid ${colors.green}`,
+                    marginBottom: 6,
+                  }}
+                >
                   ✓ Pick Up di Outlet (Gratis)
                 </div>
 
                 {/* Metode Pembayaran */}
                 <p style={{ margin: "4px 0 3px", fontWeight: 700 }}>Metode Pembayaran</p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 4, marginBottom: 8 }}>
-                  <div style={{ padding: 5, borderRadius: 6, background: `${colors.green}15`, fontWeight: 700 }}>
+                  <div
+                    style={{
+                      padding: 5,
+                      borderRadius: 6,
+                      background: `${colors.green}15`,
+                      fontWeight: 700,
+                    }}
+                  >
                     ✓ QRIS (GoPay, OVO, Dana)
                   </div>
                   <div style={{ padding: 5, borderRadius: 6, border: `1px solid ${colors.line}` }}>
@@ -1620,10 +2003,18 @@ function ShowcasePage() {
                 </div>
 
                 {/* Ringkasan */}
-                <div style={{ marginTop: "auto", borderTop: `1px solid ${colors.line}`, paddingTop: 6 }}>
+                <div
+                  style={{
+                    marginTop: "auto",
+                    borderTop: `1px solid ${colors.line}`,
+                    paddingTop: 6,
+                  }}
+                >
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span>Total Pembayaran</span>
-                    <span style={{ fontWeight: 800, fontSize: "0.85rem", color: colors.green }}>Rp 15.000</span>
+                    <span style={{ fontWeight: 800, fontSize: "0.85rem", color: colors.green }}>
+                      Rp 15.000
+                    </span>
                   </div>
                 </div>
 
@@ -1682,13 +2073,24 @@ function ShowcasePage() {
                 <h4 style={{ margin: "0 0 2px", fontFamily: font.display, fontSize: "1.1rem" }}>
                   Pembayaran Berhasil!
                 </h4>
-                <p style={{ margin: "0 0 4px", fontSize: "0.75rem", fontWeight: 700 }}>Payment Successful!</p>
+                <p style={{ margin: "0 0 4px", fontSize: "0.75rem", fontWeight: 700 }}>
+                  Payment Successful!
+                </p>
                 <p style={{ margin: "0 0 8px", fontSize: "0.68rem", color: colors.muted }}>
                   Pesanan Anda sedang diproses
                 </p>
 
-                <p style={{ margin: "6px 0 0", fontSize: "0.68rem", color: colors.muted }}>Nomor Pesanan</p>
-                <p style={{ margin: "2px 0 10px", fontSize: "1.1rem", fontWeight: 800, color: colors.green }}>
+                <p style={{ margin: "6px 0 0", fontSize: "0.68rem", color: colors.muted }}>
+                  Nomor Pesanan
+                </p>
+                <p
+                  style={{
+                    margin: "2px 0 10px",
+                    fontSize: "1.1rem",
+                    fontWeight: 800,
+                    color: colors.green,
+                  }}
+                >
                   #ANG0123456
                 </p>
 
@@ -1712,7 +2114,13 @@ function ShowcasePage() {
                 <img
                   src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80"
                   alt="Coffee"
-                  style={{ width: "100%", height: 110, objectFit: "cover", borderRadius: 8, marginTop: "auto" }}
+                  style={{
+                    width: "100%",
+                    height: 110,
+                    objectFit: "cover",
+                    borderRadius: 8,
+                    marginTop: "auto",
+                  }}
                 />
               </div>
             </PhoneCard>
@@ -1742,7 +2150,14 @@ function ShowcasePage() {
                 <h4 style={{ margin: "10px 0 2px", fontFamily: font.display, fontSize: "1.2rem" }}>
                   Terima Kasih!
                 </h4>
-                <p style={{ margin: "0 0 8px", fontSize: "0.78rem", fontWeight: 700, color: colors.cream }}>
+                <p
+                  style={{
+                    margin: "0 0 8px",
+                    fontSize: "0.78rem",
+                    fontWeight: 700,
+                    color: colors.cream,
+                  }}
+                >
                   Thank You!
                 </p>
                 <p style={{ margin: "0 0 4px", fontSize: "0.72rem", lineHeight: 1.4 }}>
@@ -1751,16 +2166,36 @@ function ShowcasePage() {
                   <span style={{ opacity: 0.8 }}>See you on your next order!</span>
                 </p>
 
-                <div style={{ height: 1, background: "rgba(255,255,255,0.2)", width: "80%", margin: "10px 0" }} />
+                <div
+                  style={{
+                    height: 1,
+                    background: "rgba(255,255,255,0.2)",
+                    width: "80%",
+                    margin: "10px 0",
+                  }}
+                />
 
-                <p style={{ margin: 0, fontWeight: 800, fontSize: "0.72rem", letterSpacing: "0.08em" }}>
+                <p
+                  style={{
+                    margin: 0,
+                    fontWeight: 800,
+                    fontSize: "0.72rem",
+                    letterSpacing: "0.08em",
+                  }}
+                >
                   NALA COFFEE ROASTERY
                 </p>
 
                 <img
                   src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2087?w=600&q=80"
                   alt="Latte"
-                  style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 8, margin: "10px 0" }}
+                  style={{
+                    width: "100%",
+                    height: 120,
+                    objectFit: "cover",
+                    borderRadius: 8,
+                    margin: "10px 0",
+                  }}
                 />
 
                 <button
