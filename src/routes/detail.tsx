@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { BottomNav } from "./index";
+import { BottomNav } from "./beranda";
 
 export const Route = createFileRoute("/detail")({
   head: () => ({ meta: [{ title: "Detail Temuan" }] }),

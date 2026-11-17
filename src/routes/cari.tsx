@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { BottomNav } from "./index";
+import { BottomNav } from "./beranda";
 
 export const Route = createFileRoute("/cari")({
   head: () => ({ meta: [{ title: "Cari & Cocokkan" }] }),
@@ -19,7 +19,7 @@ function Cari() {
     <div style={{ minHeight: "100vh", background: "#F0F3FA", fontFamily: "'Inter', sans-serif", paddingBottom: 80 }}>
       {/* Header */}
       <div style={{ background: "#fff", padding: "16px 20px", display: "flex", alignItems: "center", gap: 14, borderBottom: "1px solid #f0f0f0" }}>
-        <button onClick={() => navigate({ to: "/" })} style={{ background: "#F0F3FA", border: "none", borderRadius: 12, width: 36, height: 36, cursor: "pointer", fontSize: "1rem", display: "flex", alignItems: "center", justifyContent: "center" }}>←</button>
+        <button onClick={() => navigate({ to: "/beranda" })} style={{ background: "#F0F3FA", border: "none", borderRadius: 12, width: 36, height: 36, cursor: "pointer", fontSize: "1rem", display: "flex", alignItems: "center", justifyContent: "center" }}>←</button>
         <p style={{ margin: 0, fontSize: "1rem", fontWeight: 700, color: "#1a1a2e" }}>Cari & cocokkan</p>
       </div>
 

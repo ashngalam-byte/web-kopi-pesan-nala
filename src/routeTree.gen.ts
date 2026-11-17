@@ -10,16 +10,24 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BerandaRouteImport } from './routes/beranda'
 import { Route as CariRouteImport } from './routes/cari'
 import { Route as DetailRouteImport } from './routes/detail'
 import { Route as LaporHilangRouteImport } from './routes/lapor-hilang'
 import { Route as LaporTemuanRouteImport } from './routes/lapor-temuan'
 import { Route as LaporanSayaRouteImport } from './routes/laporan-saya'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as RegisterRouteImport } from './routes/register'
 import { Route as VerifikasiRouteImport } from './routes/verifikasi'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BerandaRoute = BerandaRouteImport.update({
+  id: '/beranda',
+  path: '/beranda',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CariRoute = CariRouteImport.update({
@@ -47,6 +55,16 @@ const LaporanSayaRoute = LaporanSayaRouteImport.update({
   path: '/laporan-saya',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VerifikasiRoute = VerifikasiRouteImport.update({
   id: '/verifikasi',
   path: '/verifikasi',
@@ -55,69 +73,90 @@ const VerifikasiRoute = VerifikasiRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/beranda': typeof BerandaRoute
   '/cari': typeof CariRoute
   '/detail': typeof DetailRoute
   '/lapor-hilang': typeof LaporHilangRoute
   '/lapor-temuan': typeof LaporTemuanRoute
   '/laporan-saya': typeof LaporanSayaRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
   '/verifikasi': typeof VerifikasiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/beranda': typeof BerandaRoute
   '/cari': typeof CariRoute
   '/detail': typeof DetailRoute
   '/lapor-hilang': typeof LaporHilangRoute
   '/lapor-temuan': typeof LaporTemuanRoute
   '/laporan-saya': typeof LaporanSayaRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
   '/verifikasi': typeof VerifikasiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/beranda': typeof BerandaRoute
   '/cari': typeof CariRoute
   '/detail': typeof DetailRoute
   '/lapor-hilang': typeof LaporHilangRoute
   '/lapor-temuan': typeof LaporTemuanRoute
   '/laporan-saya': typeof LaporanSayaRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
   '/verifikasi': typeof VerifikasiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/beranda'
     | '/cari'
     | '/detail'
     | '/lapor-hilang'
     | '/lapor-temuan'
     | '/laporan-saya'
+    | '/login'
+    | '/register'
     | '/verifikasi'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/beranda'
     | '/cari'
     | '/detail'
     | '/lapor-hilang'
     | '/lapor-temuan'
     | '/laporan-saya'
+    | '/login'
+    | '/register'
     | '/verifikasi'
   id:
     | '__root__'
     | '/'
+    | '/beranda'
     | '/cari'
     | '/detail'
     | '/lapor-hilang'
     | '/lapor-temuan'
     | '/laporan-saya'
+    | '/login'
+    | '/register'
     | '/verifikasi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BerandaRoute: typeof BerandaRoute
   CariRoute: typeof CariRoute
   DetailRoute: typeof DetailRoute
   LaporHilangRoute: typeof LaporHilangRoute
   LaporTemuanRoute: typeof LaporTemuanRoute
   LaporanSayaRoute: typeof LaporanSayaRoute
+  LoginRoute: typeof LoginRoute
+  RegisterRoute: typeof RegisterRoute
   VerifikasiRoute: typeof VerifikasiRoute
 }
 
@@ -128,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/beranda': {
+      id: '/beranda'
+      path: '/beranda'
+      fullPath: '/beranda'
+      preLoaderRoute: typeof BerandaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cari': {
@@ -165,6 +211,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LaporanSayaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/verifikasi': {
       id: '/verifikasi'
       path: '/verifikasi'
@@ -177,11 +237,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BerandaRoute: BerandaRoute,
   CariRoute: CariRoute,
   DetailRoute: DetailRoute,
   LaporHilangRoute: LaporHilangRoute,
   LaporTemuanRoute: LaporTemuanRoute,
   LaporanSayaRoute: LaporanSayaRoute,
+  LoginRoute: LoginRoute,
+  RegisterRoute: RegisterRoute,
   VerifikasiRoute: VerifikasiRoute,
 }
 export const routeTree = rootRouteImport
