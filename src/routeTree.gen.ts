@@ -10,49 +10,41 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BerandaRouteImport } from './routes/beranda'
-import { Route as CariRouteImport } from './routes/cari'
-import { Route as DetailRouteImport } from './routes/detail'
-import { Route as LaporHilangRouteImport } from './routes/lapor-hilang'
-import { Route as LaporTemuanRouteImport } from './routes/lapor-temuan'
-import { Route as LaporanSayaRouteImport } from './routes/laporan-saya'
+import { Route as CartRouteImport } from './routes/cart'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as HomeRouteImport } from './routes/home'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as RegisterRouteImport } from './routes/register'
-import { Route as VerifikasiRouteImport } from './routes/verifikasi'
+import { Route as MenuRouteImport } from './routes/menu'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as Onboarding2RouteImport } from './routes/onboarding2'
+import { Route as Onboarding3RouteImport } from './routes/onboarding3'
+import { Route as OutletRouteImport } from './routes/outlet'
+import { Route as PaymentSuccessRouteImport } from './routes/payment-success'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as ThankyouRouteImport } from './routes/thankyou'
+import { Route as VerifiedRouteImport } from './routes/verified'
+import { Route as VerifyOtpRouteImport } from './routes/verify-otp'
+import { Route as VerifyPhoneRouteImport } from './routes/verify-phone'
+import { Route as ProductIdRouteImport } from './routes/product.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BerandaRoute = BerandaRouteImport.update({
-  id: '/beranda',
-  path: '/beranda',
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CariRoute = CariRouteImport.update({
-  id: '/cari',
-  path: '/cari',
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DetailRoute = DetailRouteImport.update({
-  id: '/detail',
-  path: '/detail',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LaporHilangRoute = LaporHilangRouteImport.update({
-  id: '/lapor-hilang',
-  path: '/lapor-hilang',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LaporTemuanRoute = LaporTemuanRouteImport.update({
-  id: '/lapor-temuan',
-  path: '/lapor-temuan',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LaporanSayaRoute = LaporanSayaRouteImport.update({
-  id: '/laporan-saya',
-  path: '/laporan-saya',
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -60,104 +52,203 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RegisterRoute = RegisterRouteImport.update({
-  id: '/register',
-  path: '/register',
+const MenuRoute = MenuRouteImport.update({
+  id: '/menu',
+  path: '/menu',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VerifikasiRoute = VerifikasiRouteImport.update({
-  id: '/verifikasi',
-  path: '/verifikasi',
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Onboarding2Route = Onboarding2RouteImport.update({
+  id: '/onboarding2',
+  path: '/onboarding2',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Onboarding3Route = Onboarding3RouteImport.update({
+  id: '/onboarding3',
+  path: '/onboarding3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutletRoute = OutletRouteImport.update({
+  id: '/outlet',
+  path: '/outlet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentSuccessRoute = PaymentSuccessRouteImport.update({
+  id: '/payment-success',
+  path: '/payment-success',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThankyouRoute = ThankyouRouteImport.update({
+  id: '/thankyou',
+  path: '/thankyou',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifiedRoute = VerifiedRouteImport.update({
+  id: '/verified',
+  path: '/verified',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifyOtpRoute = VerifyOtpRouteImport.update({
+  id: '/verify-otp',
+  path: '/verify-otp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifyPhoneRoute = VerifyPhoneRouteImport.update({
+  id: '/verify-phone',
+  path: '/verify-phone',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductIdRoute = ProductIdRouteImport.update({
+  id: '/product/$id',
+  path: '/product/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/beranda': typeof BerandaRoute
-  '/cari': typeof CariRoute
-  '/detail': typeof DetailRoute
-  '/lapor-hilang': typeof LaporHilangRoute
-  '/lapor-temuan': typeof LaporTemuanRoute
-  '/laporan-saya': typeof LaporanSayaRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/home': typeof HomeRoute
   '/login': typeof LoginRoute
-  '/register': typeof RegisterRoute
-  '/verifikasi': typeof VerifikasiRoute
+  '/menu': typeof MenuRoute
+  '/onboarding': typeof OnboardingRoute
+  '/onboarding2': typeof Onboarding2Route
+  '/onboarding3': typeof Onboarding3Route
+  '/outlet': typeof OutletRoute
+  '/payment-success': typeof PaymentSuccessRoute
+  '/signup': typeof SignupRoute
+  '/thankyou': typeof ThankyouRoute
+  '/verified': typeof VerifiedRoute
+  '/verify-otp': typeof VerifyOtpRoute
+  '/verify-phone': typeof VerifyPhoneRoute
+  '/product/$id': typeof ProductIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/beranda': typeof BerandaRoute
-  '/cari': typeof CariRoute
-  '/detail': typeof DetailRoute
-  '/lapor-hilang': typeof LaporHilangRoute
-  '/lapor-temuan': typeof LaporTemuanRoute
-  '/laporan-saya': typeof LaporanSayaRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/home': typeof HomeRoute
   '/login': typeof LoginRoute
-  '/register': typeof RegisterRoute
-  '/verifikasi': typeof VerifikasiRoute
+  '/menu': typeof MenuRoute
+  '/onboarding': typeof OnboardingRoute
+  '/onboarding2': typeof Onboarding2Route
+  '/onboarding3': typeof Onboarding3Route
+  '/outlet': typeof OutletRoute
+  '/payment-success': typeof PaymentSuccessRoute
+  '/signup': typeof SignupRoute
+  '/thankyou': typeof ThankyouRoute
+  '/verified': typeof VerifiedRoute
+  '/verify-otp': typeof VerifyOtpRoute
+  '/verify-phone': typeof VerifyPhoneRoute
+  '/product/$id': typeof ProductIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/beranda': typeof BerandaRoute
-  '/cari': typeof CariRoute
-  '/detail': typeof DetailRoute
-  '/lapor-hilang': typeof LaporHilangRoute
-  '/lapor-temuan': typeof LaporTemuanRoute
-  '/laporan-saya': typeof LaporanSayaRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
+  '/home': typeof HomeRoute
   '/login': typeof LoginRoute
-  '/register': typeof RegisterRoute
-  '/verifikasi': typeof VerifikasiRoute
+  '/menu': typeof MenuRoute
+  '/onboarding': typeof OnboardingRoute
+  '/onboarding2': typeof Onboarding2Route
+  '/onboarding3': typeof Onboarding3Route
+  '/outlet': typeof OutletRoute
+  '/payment-success': typeof PaymentSuccessRoute
+  '/signup': typeof SignupRoute
+  '/thankyou': typeof ThankyouRoute
+  '/verified': typeof VerifiedRoute
+  '/verify-otp': typeof VerifyOtpRoute
+  '/verify-phone': typeof VerifyPhoneRoute
+  '/product/$id': typeof ProductIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/beranda'
-    | '/cari'
-    | '/detail'
-    | '/lapor-hilang'
-    | '/lapor-temuan'
-    | '/laporan-saya'
+    | '/cart'
+    | '/checkout'
+    | '/home'
     | '/login'
-    | '/register'
-    | '/verifikasi'
+    | '/menu'
+    | '/onboarding'
+    | '/onboarding2'
+    | '/onboarding3'
+    | '/outlet'
+    | '/payment-success'
+    | '/signup'
+    | '/thankyou'
+    | '/verified'
+    | '/verify-otp'
+    | '/verify-phone'
+    | '/product/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/beranda'
-    | '/cari'
-    | '/detail'
-    | '/lapor-hilang'
-    | '/lapor-temuan'
-    | '/laporan-saya'
+    | '/cart'
+    | '/checkout'
+    | '/home'
     | '/login'
-    | '/register'
-    | '/verifikasi'
+    | '/menu'
+    | '/onboarding'
+    | '/onboarding2'
+    | '/onboarding3'
+    | '/outlet'
+    | '/payment-success'
+    | '/signup'
+    | '/thankyou'
+    | '/verified'
+    | '/verify-otp'
+    | '/verify-phone'
+    | '/product/$id'
   id:
     | '__root__'
     | '/'
-    | '/beranda'
-    | '/cari'
-    | '/detail'
-    | '/lapor-hilang'
-    | '/lapor-temuan'
-    | '/laporan-saya'
+    | '/cart'
+    | '/checkout'
+    | '/home'
     | '/login'
-    | '/register'
-    | '/verifikasi'
+    | '/menu'
+    | '/onboarding'
+    | '/onboarding2'
+    | '/onboarding3'
+    | '/outlet'
+    | '/payment-success'
+    | '/signup'
+    | '/thankyou'
+    | '/verified'
+    | '/verify-otp'
+    | '/verify-phone'
+    | '/product/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BerandaRoute: typeof BerandaRoute
-  CariRoute: typeof CariRoute
-  DetailRoute: typeof DetailRoute
-  LaporHilangRoute: typeof LaporHilangRoute
-  LaporTemuanRoute: typeof LaporTemuanRoute
-  LaporanSayaRoute: typeof LaporanSayaRoute
+  CartRoute: typeof CartRoute
+  CheckoutRoute: typeof CheckoutRoute
+  HomeRoute: typeof HomeRoute
   LoginRoute: typeof LoginRoute
-  RegisterRoute: typeof RegisterRoute
-  VerifikasiRoute: typeof VerifikasiRoute
+  MenuRoute: typeof MenuRoute
+  OnboardingRoute: typeof OnboardingRoute
+  Onboarding2Route: typeof Onboarding2Route
+  Onboarding3Route: typeof Onboarding3Route
+  OutletRoute: typeof OutletRoute
+  PaymentSuccessRoute: typeof PaymentSuccessRoute
+  SignupRoute: typeof SignupRoute
+  ThankyouRoute: typeof ThankyouRoute
+  VerifiedRoute: typeof VerifiedRoute
+  VerifyOtpRoute: typeof VerifyOtpRoute
+  VerifyPhoneRoute: typeof VerifyPhoneRoute
+  ProductIdRoute: typeof ProductIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -169,46 +260,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/beranda': {
-      id: '/beranda'
-      path: '/beranda'
-      fullPath: '/beranda'
-      preLoaderRoute: typeof BerandaRouteImport
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/cari': {
-      id: '/cari'
-      path: '/cari'
-      fullPath: '/cari'
-      preLoaderRoute: typeof CariRouteImport
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/detail': {
-      id: '/detail'
-      path: '/detail'
-      fullPath: '/detail'
-      preLoaderRoute: typeof DetailRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lapor-hilang': {
-      id: '/lapor-hilang'
-      path: '/lapor-hilang'
-      fullPath: '/lapor-hilang'
-      preLoaderRoute: typeof LaporHilangRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lapor-temuan': {
-      id: '/lapor-temuan'
-      path: '/lapor-temuan'
-      fullPath: '/lapor-temuan'
-      preLoaderRoute: typeof LaporTemuanRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/laporan-saya': {
-      id: '/laporan-saya'
-      path: '/laporan-saya'
-      fullPath: '/laporan-saya'
-      preLoaderRoute: typeof LaporanSayaRouteImport
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -218,18 +288,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/register': {
-      id: '/register'
-      path: '/register'
-      fullPath: '/register'
-      preLoaderRoute: typeof RegisterRouteImport
+    '/menu': {
+      id: '/menu'
+      path: '/menu'
+      fullPath: '/menu'
+      preLoaderRoute: typeof MenuRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/verifikasi': {
-      id: '/verifikasi'
-      path: '/verifikasi'
-      fullPath: '/verifikasi'
-      preLoaderRoute: typeof VerifikasiRouteImport
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding2': {
+      id: '/onboarding2'
+      path: '/onboarding2'
+      fullPath: '/onboarding2'
+      preLoaderRoute: typeof Onboarding2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding3': {
+      id: '/onboarding3'
+      path: '/onboarding3'
+      fullPath: '/onboarding3'
+      preLoaderRoute: typeof Onboarding3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outlet': {
+      id: '/outlet'
+      path: '/outlet'
+      fullPath: '/outlet'
+      preLoaderRoute: typeof OutletRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payment-success': {
+      id: '/payment-success'
+      path: '/payment-success'
+      fullPath: '/payment-success'
+      preLoaderRoute: typeof PaymentSuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thankyou': {
+      id: '/thankyou'
+      path: '/thankyou'
+      fullPath: '/thankyou'
+      preLoaderRoute: typeof ThankyouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verified': {
+      id: '/verified'
+      path: '/verified'
+      fullPath: '/verified'
+      preLoaderRoute: typeof VerifiedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verify-otp': {
+      id: '/verify-otp'
+      path: '/verify-otp'
+      fullPath: '/verify-otp'
+      preLoaderRoute: typeof VerifyOtpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verify-phone': {
+      id: '/verify-phone'
+      path: '/verify-phone'
+      fullPath: '/verify-phone'
+      preLoaderRoute: typeof VerifyPhoneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/$id': {
+      id: '/product/$id'
+      path: '/product/$id'
+      fullPath: '/product/$id'
+      preLoaderRoute: typeof ProductIdRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -237,15 +377,22 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BerandaRoute: BerandaRoute,
-  CariRoute: CariRoute,
-  DetailRoute: DetailRoute,
-  LaporHilangRoute: LaporHilangRoute,
-  LaporTemuanRoute: LaporTemuanRoute,
-  LaporanSayaRoute: LaporanSayaRoute,
+  CartRoute: CartRoute,
+  CheckoutRoute: CheckoutRoute,
+  HomeRoute: HomeRoute,
   LoginRoute: LoginRoute,
-  RegisterRoute: RegisterRoute,
-  VerifikasiRoute: VerifikasiRoute,
+  MenuRoute: MenuRoute,
+  OnboardingRoute: OnboardingRoute,
+  Onboarding2Route: Onboarding2Route,
+  Onboarding3Route: Onboarding3Route,
+  OutletRoute: OutletRoute,
+  PaymentSuccessRoute: PaymentSuccessRoute,
+  SignupRoute: SignupRoute,
+  ThankyouRoute: ThankyouRoute,
+  VerifiedRoute: VerifiedRoute,
+  VerifyOtpRoute: VerifyOtpRoute,
+  VerifyPhoneRoute: VerifyPhoneRoute,
+  ProductIdRoute: ProductIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

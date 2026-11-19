@@ -18,7 +18,7 @@ export const CATEGORIES: Array<{
     label: "Coffee",
     title: "Coffee Menu",
     subtitle: "Nikmati Pilihan Makanan dan Minuman Favoritmu",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2087?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80",
   },
   {
     id: "non-coffee",
@@ -326,7 +326,7 @@ export const PRODUCTS: Product[] = [
     name: "Chemex",
     desc: "Kopi seduh manual menggunakan gelas kaca dan filter kertas.",
     price: 37000,
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2087?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80",
   },
   {
     id: "aeropress",

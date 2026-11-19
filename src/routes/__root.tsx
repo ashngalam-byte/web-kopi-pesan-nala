@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -53,13 +54,23 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
+      { title: "NALA Coffee Roastory" },
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "theme-color", content: "#083628" },
+      { name: "description", content: "NALA Coffee Roastory — pesan kopi, non-coffee, dan camilan favoritmu. Roastery lokal, rasa juara." },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+      { name: "apple-mobile-web-app-title", content: "NALA" },
+      { name: "format-detection", content: "telephone=no" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Bree+Serif&display=swap" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "apple-touch-icon", href: "/icons/apple-touch-icon.png" },
+      { rel: "manifest", href: "/manifest.webmanifest" },
     ],
   }),
   shellComponent: RootShell,
@@ -74,7 +85,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body style={{ margin: 0, background: "#F0F3FA" }}>
+      <body style={{ margin: 0, padding: 0, minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "flex-start", background: "#1a1a1a" }}>
         {children}
         <Scripts />
       </body>
@@ -84,9 +95,29 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!("serviceWorker" in navigator)) return;
+    // Di dev, service worker hanya aktif bila dibuka dengan ?sw=1 (untuk uji PWA).
+    const forceSW = new URLSearchParams(window.location.search).has("sw");
+    if (!import.meta.env.PROD && !forceSW) return;
+
+    const register = () => {
+      navigator.serviceWorker.register("/sw.js").catch(() => {
+        /* PWA tetap jalan tanpa service worker */
+      });
+    };
+
+    if (document.readyState === "complete") register();
+    else window.addEventListener("load", register);
+    return () => window.removeEventListener("load", register);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <Toaster position="top-center" richColors />
     </QueryClientProvider>
   );
 }
